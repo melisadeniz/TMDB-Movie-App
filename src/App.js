@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from 'styled-components';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/base/Header';
+import Footer from "./components/base/Footer";
+import routes from './routes';
 
 function App() {
+
+  const theme = {
+    colors: {
+      navbar: '#4b4b4b',
+      footer: '#4b4b4b',
+    },
+    mobile: '768px',
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <ThemeProvider theme={theme}>
+    <>
+     <Header />
+     
+     <div className="row">
+     <Routes>
+         {routes.map((item, index) => (
+           <Route key={index} path={item.path} element={<item.element />} />
+         ))}
+       </Routes>
+   
+     </div>
+
+     <Footer />
+    </>
+   
+    </ThemeProvider>
   );
 }
 
