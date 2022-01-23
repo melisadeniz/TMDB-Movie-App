@@ -17,10 +17,10 @@ function Header() {
     <div className="row d-flex align-items-center">
      <div className="col-4 d-flex">
      <Logo src='./movielogo.png' alt='...'/>
-     <Link to="/sort-filter" className={`btn dropdown-toggle`}>Movies</Link>
-       <ul id="movies-dropdown" className="dropdown-menu">
-        <li><Link className="dropdown-item" to="sort-filter/popular">Popular</Link></li>
-        <li><Link className="dropdown-item" to="sort-filter/top-rated">Top Rated</Link></li>
+     <Link className="btn dropdown-toggle">Movies</Link>
+       <ul className="dropdown-menu">
+        <li><Link className="dropdown-item">Popular</Link></li>
+        <li><Link className="dropdown-item">Top Rated</Link></li>
        </ul>
       </div>
 
