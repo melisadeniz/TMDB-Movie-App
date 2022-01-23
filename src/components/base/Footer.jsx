@@ -7,6 +7,7 @@ import { BsLinkedin, BsGithub } from "react-icons/bs"
 
 function Footer() {
   return (
+
  <FooterStyled>
  
    <div className="footer">
@@ -45,7 +46,6 @@ function Footer() {
           
         </div>
         
-   
  </FooterStyled>
   )
 }

@@ -1,6 +1,7 @@
 import { DebounceInput } from "react-debounce-input";
 
 function Search({ search, setSearch }) {
+  
   return (
     <>
 

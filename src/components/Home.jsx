@@ -1,4 +1,3 @@
-// import { CardStyled } from "../StyledComponents/CardStyled"
 // import { Button } from "../StyledComponents/ButtonStyled"
 import Search from "./Search"
 import { useState } from "react";
@@ -20,7 +19,7 @@ function Home() {
   });
 
 
-  // function searchFilter(item) {
+  // function searchItem(item) {
   //   if (item.title.toLowerCase().includes(search.toLowerCase())) {
   //       return true
   //   }
