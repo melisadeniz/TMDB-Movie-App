@@ -8,8 +8,8 @@ function App() {
 
   const theme = {
     colors: {
-      navbar: '#4b4b4b',
-      footer: '#4b4b4b',
+      dark: '#4b4b4b',
+      light: '#f7f1e3',
     },
     mobile: '768px',
   }
@@ -19,15 +19,14 @@ function App() {
     <ThemeProvider theme={theme}>
     <>
      <Header />
-     
-     <div className="row">
+     <br />
+     <br />
+     <br />
      <Routes>
          {routes.map((item, index) => (
            <Route key={index} path={item.path} element={<item.element />} />
          ))}
        </Routes>
-   
-     </div>
 
      <Footer />
     </>

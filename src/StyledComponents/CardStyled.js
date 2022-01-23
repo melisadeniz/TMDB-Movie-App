@@ -13,4 +13,8 @@ export const CardStyled = styled.div`
     height: 135px;
   }
   color: ${({color}) => color || '#333'};
+  &:hover {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
 `
