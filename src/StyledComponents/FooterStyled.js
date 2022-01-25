@@ -5,6 +5,8 @@ export const FooterStyled = styled.footer`
   width: 100%;
   color: white;
   padding: 10px;
+  box-shadow: 0px 1px 5px black;
+
   
   ul {
     list-style-type: none;

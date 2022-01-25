@@ -13,20 +13,21 @@ function Header() {
      
 <HeaderStyled>     
  <nav className="navbar">
-  <div className="container">
-    <div className="row d-flex align-items-center">
-     <div className="col-4 d-flex">
+  <div className="container row">
+     <div className="left col-2 d-flex">
      <Logo src='./movielogo.png' alt='...'/>
-     <Link className="btn dropdown-toggle">Movies</Link>
-       <ul className="dropdown-menu">
-        <li><Link className="dropdown-item">Popular</Link></li>
-        <li><Link className="dropdown-item">Top Rated</Link></li>
-       </ul>
+     <div>
+       <Link className="nav-link d-flex text-light mb-2" to="/">Movies<IoMdArrowDropdown /></Link>
+       <div className="categories">
+       <span><Link className="nav-link text-light" to="popular">Popular</Link></span>
+       <span><Link className="nav-link text-light" to="top-rated">Top Rated</Link></span>
+       </div>
       </div>
+    </div>
+  
 
-    
-    <div className='col-4'>
-      <ul className='list-unstyled d-flex'>
+    <div className='col-2'>
+      <ul className='list-unstyled d-flex mt-2'>
         {routes
         .filter((item) => item.isNav)
          .map((item, index) => (     
@@ -36,17 +37,21 @@ function Header() {
         ))} 
       </ul>
      </div>
-    <div className='left col-2 d-flex'>
-       <Link className="text-light mx-3" to="search"><FaSearch /></Link>
+
+   <div className="col-8 d-flex">
+     <div>
+       <Link className="text-light mx-5" to=""><FaSearch /></Link>
+     </div>
+
+       <div className='right d-flex'>
        <img src="profilepicture.jpg" alt="" />
        <div className="profile">
        <Link className="text-light mx-1" to="/"><IoMdArrowDropdown /></Link>
        <div className="options">
-       <span>Login</span>
-       <span>Settings</span>
+       <span><Link className="nav-link text-light" to="profile">Profile</Link></span>
        </div>
       </div>
-    </div>
+      </div>
    </div>
    </div>
  </nav>

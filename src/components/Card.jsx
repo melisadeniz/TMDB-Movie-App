@@ -2,21 +2,14 @@ import { CardStyled } from "../StyledComponents/CardStyled"
 
 function Card(props) {
 
-  const {backdrop_path, title, release_date} = props
+  const {poster_path, title, release_date} = props
 
     return (
-
       <CardStyled>
-      <div className="card">
-      <div className="text-center">
-      <img src={`${backdrop_path}`} className="card-img-top" alt={title} height={50} width={30} />
-      </div>
-        <div className="card-body">
-          <h6 className="card-title text-center h2">{title}</h6>
-          <p className="card-subtitle mb-2 text-muted text-center">
-          <strong>Release Date: </strong>{release_date}
-          </p>
-        </div>
+      <div>
+      <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} />
+          <h6 className="title text-center">{title}</h6>
+          <span className="subtitle text-center">{release_date}</span> 
       </div>
       </CardStyled>
       

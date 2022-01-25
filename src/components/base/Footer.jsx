@@ -26,15 +26,15 @@ function Footer() {
             className="btn btn-primary m-1"
             style={{ backgroundColor: "#0082ca" }}
             href="https://www.linkedin.com/in/melisa-deniz"
-            target='_blank'
+            target='blank'
             role="button"
-          ><BsLinkedin /></a>
+            ><BsLinkedin /></a>
 
           <a
             className="btn btn-secondary m-1"
             style={{ backgroundColor: "#333333" }}
             href="https://github.com/melisadeniz"
-            target='_blank'
+            target='blank'
             role="button"
           ><BsGithub /></a>
               </li>

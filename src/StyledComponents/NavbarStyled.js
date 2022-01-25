@@ -16,48 +16,62 @@ export const HeaderStyled = styled.nav`
     top: 0;
     font-size: 14px;
     z-index: 999;
+    box-shadow: 0px 1px 5px black;
+    font-family: "Montserrat", sans-serif;
     background-color: ${({ theme }) => theme.colors.dark}; 
   }
 
-  .container {
-    padding: 5px 10px;
-    justify-content: space-between;
-    height: 55px;
-    }
-    
-.left {
-  
-  img {
+
+ .left {
+   .categories {
+        display: none;
+        background-color: gray;
+        border-radius: 5px;
+      }
+      span{
+        padding: 0px;
+        cursor: pointer;
+      }
+      &:hover {
+        .categories {
+          display: flex;
+          flex-direction: column;
+          position: absolute
+        }
+   }  
+} 
+
+img {
       width: 30px;
       height: 30px;
       border-radius: 5px;
       object-fit: cover;
       cursor: pointer;      
     }
-
+    
+.right {
       .options {
         display: none;
         background-color: gray;
         border-radius: 5px;
       }
-
       span{
-        padding: 5px;
+        padding: 0px;
         cursor: pointer;
       }
-
       &:hover {
         .options {
           display: flex;
           flex-direction: column;
           position: absolute
         }
-
+   }
 }
-  
-    }
 
   @media(max-width: ${({theme}) => theme.mobile}){
     flex-direction: column;
+    
+    padding-top: 15px;
+
   }
 `

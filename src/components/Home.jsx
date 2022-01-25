@@ -1,62 +1,80 @@
 // import { Button } from "../StyledComponents/ButtonStyled"
-import Search from "./Search"
-import { useState } from "react";
-import {fetchMovies} from "../data"
-import {useQuery} from "react-query"
-import Card from "./Card"
+import Search from "./Search";
+import { useEffect, useState } from "react";
+import NotFound from "./NotFound";
+import Card from "./Card";
+import { useQuery } from "react-query";
+import { fetchMovies } from "../data";
+import { ContainerStyled } from "../StyledComponents/ContainerStyled";
 
-
-function Home() {
+function Home(props) {
 
   const [search, setSearch] = useState("");
+
+
+  const [currentPageData, setCurrentPageData] = useState([]);
+
+
+  const { isLoading, isError, error, isFetched, isFetching, data, ...query } =
+    useQuery("movie", fetchMovies, {
+      select: (data) => data.data.results,
+      retry: false,
+    });
+
+
+  useEffect(() => {
+    setCurrentPageData( data
+    ?.filter((item) => item.title.toLowerCase().includes(search.toLowerCase()))
+ 
+  )}, [search])
+
   
 
-  const {isLoading, isError, error, isFetched, isFetching, data, ...query } = 
-  useQuery('movie', fetchMovies,
-  {
-    select: (data) => data.data.results, 
-    retry:false
-  });
-
-
-  // function searchItem(item) {
-  //   if (item.title.toLowerCase().includes(search.toLowerCase())) {
-  //       return true
-  //   }
-  //   return false
-  // }
-
-
-function handleReset() {
-  setSearch('')
-}
+  function handleReset() {
+    setSearch("");
+  }
 
   return (
-      <>
-<div className="container">
-<div className="row my-3 d-flex">
-      <div className="col-4">
-           <Search search={search} setSearch={setSearch}/>
-          </div>
-    <div className="col-2">
-     <button type="button" onClick={handleReset} className="btn btn-outline-secondary">Reset</button>
-   </div>
-  </div>
+    <>
+    <ContainerStyled>
+      <div className="container">
+        <Search
+          search={search}
+          setSearch={(e) => {setSearch(e);
+          console.log(e)} }
+          handleReset={handleReset}
+        />
 
-       <div className="row m-3">
-          {data?.map((item) => ( <div key={item.id} className="col-sm">
-                 <Card
-                 backdrop_path={item.backdrop_path}
-                 title={item.title}
-                 id={item.id}
-                 release_date={item.release_date}
-                 />
-             </div>))}
-        </div>   
-     </div>
+        <div className="discover row m-3">
+          {
+            currentPageData?.map((item) => (
+              <div key={item.id} className="col-sm">
+                <Card
+                  id={item.id}
+                  poster_path={item.poster_path}
+                  title={item.title}
+                  release_date={item.release_date}
+                />
+              </div>
+            ))}
+          {currentPageData?.length === 0 && <NotFound />}
+        </div>
+      </div>
 
-      </>
-  )
+      {/* {currentPageData?.length !== 0 && (
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: 10,
+          }}
+        >
+        </div>
+      )} */}
+    </ContainerStyled>
+    </>
+  );
 }
 
-export default Home
+export default Home;
