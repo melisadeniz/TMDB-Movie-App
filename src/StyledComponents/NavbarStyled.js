@@ -16,11 +16,11 @@ export const HeaderStyled = styled.nav`
     top: 0;
     font-size: 14px;
     z-index: 999;
+    padding: 13px;
     box-shadow: 0px 1px 5px black;
     font-family: "Montserrat", sans-serif;
     background-color: ${({ theme }) => theme.colors.dark}; 
   }
-
 
  .left {
    .categories {
@@ -41,15 +41,21 @@ export const HeaderStyled = styled.nav`
    }  
 } 
 
-img {
+.right {
+
+  justify-content: end;
+
+  img {
       width: 30px;
       height: 30px;
       border-radius: 5px;
       object-fit: cover;
       cursor: pointer;      
     }
-    
-.right {
+}
+  
+.profile {
+
       .options {
         display: none;
         background-color: gray;

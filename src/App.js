@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { Routes, Route} from 'react-router-dom';
 import Header from './components/base/Header';
-import Footer from "./components/base/Footer";
+import Footer from './components/base/Footer';
 import routes from './routes';
 
 function App() {
@@ -18,13 +18,11 @@ function App() {
     
     <ThemeProvider theme={theme}>
     <>
+    <div className='app'>
      <Header />
-
-     <div className='app'>
      <br />
      <br />
      <br />
-     
      <Routes>
          {routes.map((item, index) => (
            <Route key={index} path={item.path} element={<item.element />} />
@@ -32,6 +30,7 @@ function App() {
        </Routes>
     </div>
      <Footer />
+
     </>
    
     </ThemeProvider>
