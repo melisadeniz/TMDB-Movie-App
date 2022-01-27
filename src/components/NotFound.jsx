@@ -1,8 +1,15 @@
+import { ContainerStyled } from "../StyledComponents/ContainerStyled";
 
 function NotFound(props) {
   return (
     <>
-      <h1>404 - Not Found!</h1>
+      <ContainerStyled>
+        <div className="offset-5 my-5">
+          <div className="login my-5">
+            <h1>404 - Not Found!</h1>
+          </div>
+        </div>
+      </ContainerStyled>
     </>
   );
 }

@@ -4,7 +4,7 @@ import Popular from './Pages/Popular';
 import TopRated from './Pages/TopRated';
 import Detail from './components/Detail';
 import Search from './components/Search';
-import Contact from './components/Contact';
+import Contact from './Pages/Contact';
 import Profile from './Pages/Profile';
 import Login from './Pages/Login';
 import NotFound from './components/NotFound';

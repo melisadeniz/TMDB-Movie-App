@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const CardStyled = styled.div`
-  background-color: ${({ theme }) => theme.dark};
   display: flex;
   width: 190px;
   height: 300px;
@@ -22,14 +21,12 @@ export const CardStyled = styled.div`
   }
   
   .title {
-    color: ${({ theme }) => theme.dark};
     text-align: center;
     font-size: 13px;
     padding: 8px 0;
   }
 
   .subtitle {
-    color: ${({ theme }) => theme.dark};
     display: flex;
     justify-content: space-between;
     font-size: 11px;

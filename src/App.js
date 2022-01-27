@@ -10,7 +10,7 @@ function App() {
 
   const theme = useSelector((state) => state.theme)
 
-  document.getElementById("root").style.backgroundColor = theme ? "#D1D4C9":"black"
+  document.getElementById("root").style.backgroundColor = theme ? "#D1D4C9":"#04293A"
   document.getElementById("root").style.color = theme ? "black":"white"
 
 

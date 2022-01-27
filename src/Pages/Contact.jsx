@@ -1,15 +1,15 @@
 import { ContainerStyled } from "../StyledComponents/ContainerStyled";
 
-function Profile(props) {
+function Contact(props) {
   return (
     <ContainerStyled>
       <div className="offset-5 my-5">
         <div className="login my-5">
-          <h1>Profile</h1>
+          <h1>Contact</h1>
         </div>
       </div>
     </ContainerStyled>
   );
 }
 
-export default Profile;
+export default Contact;

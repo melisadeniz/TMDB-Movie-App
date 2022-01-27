@@ -73,16 +73,16 @@ function Trending() {
             
             <div className="btn-group ms-auto">
               <Button
-                className={`btn btn-dark ${trend === "day" ? "active" : null}`}
+                className={`btn btn-secondary ${trend === "day" ? "active" : null}`}
                 onClick={() => dispatch(changeTrendValue("day"))}
               >
-                Day
+                Today
               </Button>
               <Button
-                className={`btn btn-dark ${trend === "week" ? "active" : null}`}
+                className={`btn btn-secondary ${trend === "week" ? "active" : null}`}
                 onClick={() => dispatch(changeTrendValue("week"))}
               >
-                Week
+                Last Week
               </Button>
             </div>
           </div>
