@@ -8,28 +8,34 @@ export const Logo = styled.img`
   }
 `
 
+export const Toggle = styled.button`
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  transition: all .5s ease;
+`;
+
 export const HeaderStyled = styled.nav`
   .navbar {
     width: 100%;
-    color: white;
     position: fixed;
-    top: 0;
     font-size: 14px;
     z-index: 999;
-    padding: 13px;
+    padding: 12px;
     box-shadow: 0px 1px 5px black;
     font-family: "Montserrat", sans-serif;
-    background-color: ${({ theme }) => theme.colors.dark}; 
   }
 
  .left {
    .categories {
         display: none;
-        background-color: gray;
+        background-color: white;
         border-radius: 5px;
       }
       span{
-        padding: 0px;
         cursor: pointer;
       }
       &:hover {
@@ -42,8 +48,6 @@ export const HeaderStyled = styled.nav`
 } 
 
 .right {
-
-  justify-content: end;
 
   img {
       width: 30px;
@@ -58,7 +62,7 @@ export const HeaderStyled = styled.nav`
 
       .options {
         display: none;
-        background-color: gray;
+        background-color: white;
         border-radius: 5px;
       }
       span{

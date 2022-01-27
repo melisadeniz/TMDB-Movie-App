@@ -1,85 +1,128 @@
 import Search from "../components/Search";
 import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { changeTrendValue } from "../reduxStore/trendValue";
 import NotFound from "../components/NotFound";
-import CustomPagination from "../components/CustomPagination";
+import ReactPaginate from "react-paginate";
 import Card from "../components/Card";
+import { Button } from "../StyledComponents/ButtonStyled";
 import { ContainerStyled } from "../StyledComponents/ContainerStyled";
-import axios from "axios";
+import { useQuery } from "react-query";
+import { fetchTrending } from "../data";
 
-function Trending(props) {
-
-
-  const API_KEY = "826a5ec798a85ea391a94fb7606095b9";
-
+function Trending() {
+  const { trend } = useSelector((state) => state);
   const [search, setSearch] = useState("");
-  const [page, setPage] = useState(1); 
-  const [content, setContent] = useState([]);
+  const [page, setPage] = useState(1);
+  const dispatch = useDispatch();
 
-  const fetchTrending = async () => {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}&page=${page}`
-    );
+  // const [content, setContent] = useState([]);
 
-    setContent(data.results);
-  };
+  // const fetchTrending = async () => {
+  //   const { data } = await axios.get(
+  //     `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}&page=${page}`
+  //   );
 
-  // const fetchMovies = () => BASE_AXIOS.get(`/trending/all/day?api_key=${API_KEY}&page=${page}`);
+  //   setContent(data.results);
+  // };
 
-  // const { isLoading, isError, error, isFetched, isFetching, data, ...query } =
-  //   useQuery("movie", fetchMovies, {
-  //     select: (data) => data.data.results,
-  //     retry: false,
-  //   });
-
+  const { isLoading, isError, error, isFetched, isFetching, data, ...query } =
+    useQuery(["movies", trend], () => fetchTrending(trend), {
+      select: (data) => data.data.results,
+      retry: false,
+    });
 
   useEffect(() => {
-    setContent( content
-    ?.filter((item) => item.title.toLowerCase().includes(search.toLowerCase()))
- 
-  )}, [search]);
-
+    setPage(
+      data?.filter((item) =>
+        item.title.toLowerCase().includes(search.toLowerCase())
+      ),
+      console.log(data)
+    );
+  }, [search]);
 
   useEffect(() => {
     window.scroll(0, 0);
     fetchTrending();
-  
   }, [page]);
-  
 
   function handleReset() {
     setSearch("");
   }
 
+  const handlePageChange = (page) => {
+    setPage(page);
+    window.scroll(0, 0);
+  };
+
   return (
     <>
-    <ContainerStyled>
-      
-      <div className="container">
-        <Search
-          search={search}
-          setSearch={(e) => {setSearch(e);
-          console.log(e)} }
-          handleReset={handleReset}
-        />
-        <div className="discover row m-3">
-          {
-            content?.map((item) => (
+      <ContainerStyled>
+        <div className="container">
+          <Search
+            search={search}
+            setSearch={(e) => {
+              setSearch(e);
+              console.log(e);
+            }}
+            handleReset={handleReset}
+          />
+
+          <div className="d-flex">
+            <h2>Trending Movies</h2>
+            
+            <div className="btn-group ms-auto">
+              <Button
+                className={`btn btn-dark ${trend === "day" ? "active" : null}`}
+                onClick={() => dispatch(changeTrendValue("day"))}
+              >
+                Day
+              </Button>
+              <Button
+                className={`btn btn-dark ${trend === "week" ? "active" : null}`}
+                onClick={() => dispatch(changeTrendValue("week"))}
+              >
+                Week
+              </Button>
+            </div>
+          </div>
+
+          <div className="discover row m-3">
+            {data?.map((item) => (
               <div key={item.id} className="col-sm">
                 <Card
                   id={item.id}
                   poster={item.poster_path}
-                  title={item.title || item.name}
-                  date={item.first_air_date || item.release_date}
-                  media_type={item.media_type}
+                  title={item.title}
+                  date={item.release_date}
                   vote_average={item.vote_average}
                 />
               </div>
             ))}
-          {content?.length === 0 && <NotFound />}
+            {data?.length === 0 && <NotFound />}
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                marginTop: 10,
+              }}
+            >
+              <ReactPaginate
+                previousLabel={"previous"}
+                nextLabel={"next"}
+                breakLabel={"..."}
+                breakClassName={"break-me"}
+                pageCount={10}
+                onPageChange={handlePageChange}
+                containerClassName={"pagination"}
+                subContainerClassName={"pages pagination"}
+                activeClassName={"active"}
+              />
+            </div>
+          </div>
         </div>
-    <CustomPagination setPage={setPage} />
-   </div>
-    </ContainerStyled>
+      </ContainerStyled>
     </>
   );
 }

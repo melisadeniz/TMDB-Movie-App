@@ -1,9 +1,12 @@
-
+import { ContainerStyled } from "../StyledComponents/ContainerStyled"
 
 function Popular(props) {
 
   return (
-    <h1>Popular</h1>
+    <ContainerStyled>
+       <h1>Popular</h1>
+    </ContainerStyled>
+ 
   )
 }
 

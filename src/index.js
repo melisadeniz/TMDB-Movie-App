@@ -1,20 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import {Provider as ReduxProvider} from "react-redux"
+import { QueryClient, QueryClientProvider } from 'react-query';
+import reportWebVitals from './reportWebVitals';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import store from "./reduxStore"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { QueryClient, QueryClientProvider } from 'react-query';
+
 
 const queryClient = new QueryClient();
 
 ReactDOM.render(
   <BrowserRouter>
   <React.StrictMode>
+  <ReduxProvider store={store}>
     <QueryClientProvider client={queryClient}>
     <App />
     </QueryClientProvider>
+    </ReduxProvider>
   </React.StrictMode>
   </BrowserRouter>,
   document.getElementById('root')

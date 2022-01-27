@@ -16,7 +16,7 @@ function Footer() {
               .filter((item) => item.isFooter)
               .map((item, index) => (
                 <li className="footer-item" key={index}>
-                  <Link className="footer-item nav-link text-light text-end" to={item.path}>
+                  <Link className="footer-item nav-link text-end" to={item.path}>
                     {item.title}
                   </Link>
                 </li>

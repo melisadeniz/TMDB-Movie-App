@@ -1,23 +1,23 @@
-import { ThemeProvider } from 'styled-components';
+// import { ThemeProvider } from 'styled-components';
 import { Routes, Route} from 'react-router-dom';
+import {useSelector} from "react-redux"
 import Header from './components/base/Header';
 import Footer from './components/base/Footer';
 import routes from './routes';
 
+
 function App() {
 
-  const theme = {
-    colors: {
-      dark: '#4b4b4b',
-      light: '#ffffff',
-    },
-    mobile: '768px',
-  }
+  const theme = useSelector((state) => state.theme)
+
+  document.getElementById("root").style.backgroundColor = theme ? "#D1D4C9":"black"
+  document.getElementById("root").style.color = theme ? "black":"white"
+
 
   return (
     
-    <ThemeProvider theme={theme}>
     <>
+    
     <div className='app'>
      <Header />
      <br />
@@ -33,7 +33,6 @@ function App() {
 
     </>
    
-    </ThemeProvider>
   );
 }
 

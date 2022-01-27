@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  border-radius: 50px;
+  border-radius: 40px;
   border: none;
   box-shadow:   px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  padding: 15px 60px;
+  padding: 5px 40px;
   background-color: ${({bg}) => bg || '#fff'};
   color: ${({color}) => color || '#333'};
   &:hover {
