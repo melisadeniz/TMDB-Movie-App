@@ -1,4 +1,4 @@
-import Trending from './Pages/Trending';
+import HomePage from './Pages/HomePage';
 import About from './Pages/About';
 import Popular from './Pages/Popular';
 import TopRated from './Pages/TopRated';
@@ -12,7 +12,7 @@ import NotFound from './components/NotFound';
 
 
 const routes = [
-  {title: "HomePage", path:"/", element: Trending, isNav: true, isFooter: false},
+  {title: "HomePage", path:"/", element: HomePage, isNav: true, isFooter: false},
   {title: "About", path: "about", element: About, isNav:false, isFooter: true},
   {title: "TopRated", path: "top-rated", element: TopRated, isNav:false, isFooter: false},
   {title: "Popular", path: "popular", element: Popular, isNav:false, isFooter: false},

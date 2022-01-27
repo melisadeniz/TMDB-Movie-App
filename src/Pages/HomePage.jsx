@@ -10,7 +10,7 @@ import { ContainerStyled } from "../StyledComponents/ContainerStyled";
 import { useQuery } from "react-query";
 import { fetchTrending } from "../data";
 
-function Trending() {
+function HomePage() {
   const { trend } = useSelector((state) => state);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -127,4 +127,4 @@ function Trending() {
   );
 }
 
-export default Trending;
+export default HomePage;

@@ -1,4 +1,5 @@
 import { DebounceInput } from "react-debounce-input";
+import { Button } from "../StyledComponents/ButtonStyled";
 
 function Search({ search, setSearch, handleReset }) {
   
@@ -18,7 +19,7 @@ function Search({ search, setSearch, handleReset }) {
      />
   </div>
     <div className="col-6">
-     <button type="button" onClick={handleReset} className="btn btn-light btn-outline-secondary">Reset</button>
+     <Button type="button" onClick={handleReset} className="btn-outline-secondary">Reset</Button>
    </div>
   </div>
  </>
