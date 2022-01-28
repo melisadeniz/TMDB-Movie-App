@@ -1,11 +1,8 @@
 import { CardStyled } from "../StyledComponents/CardStyled";
 import { FiHeart } from "react-icons/fi";
-// import { useDispatch, useSelector } from 'react-redux';
 
 function Card(props) {
-  const { id, poster, title, date, vote_average } = props;
-
-  // const dispatch = useDispatch()
+  const { poster, title, date, vote_average } = props;
 
   return (
     <CardStyled>
@@ -18,10 +15,7 @@ function Card(props) {
           <b className="title">{title}</b>
           <span className="subtitle">
             <div>
-              <FiHeart
-                // isFav={favoritesList?.includes(item.id)}
-                // onClick={() => dispatch(addFavList(item.id))}
-              />
+              <FiHeart />
             </div>
             <span className="subtitle">{date}</span>
           </span>
