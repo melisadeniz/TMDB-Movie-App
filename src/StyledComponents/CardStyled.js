@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CardStyled = styled.div`
+  background-color: ${props => props.theme === "dark" ? "#131414" : "white"};
   display: flex;
   width: 190px;
   height: 300px;
@@ -29,7 +30,8 @@ export const CardStyled = styled.div`
   .subtitle {
     display: flex;
     justify-content: space-between;
-    font-size: 11px;
+    font-family: fantasy;
+    font-size: 12px;
     padding: 0 2px;
     padding-bottom: 3px;
   }
@@ -41,7 +43,6 @@ export const CardStyled = styled.div`
 
   color: ${({ color }) => color || "#333"};
   &:hover {
-    opacity: 0.9;
     transform: scale(0.98);
   }
 `;

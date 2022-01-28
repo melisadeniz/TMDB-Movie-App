@@ -19,7 +19,8 @@ export const Toggle = styled.button`
 `;
 
 export const HeaderStyled = styled.nav`
-  .navbar {
+
+  .nav {
     width: 100%;
     position: fixed;
     font-size: 14px;
@@ -29,13 +30,20 @@ export const HeaderStyled = styled.nav`
     font-family: "Montserrat", sans-serif;
   }
 
- .left {
-   .categories {
+  ul li {
+    justify-content: space-between;
+
+  }
+
+.movies {
+
+     .categories {
         display: none;
         background-color: white;
         border-radius: 5px;
       }
       span{
+        padding: 2px;
         cursor: pointer;
       }
       &:hover {
@@ -44,10 +52,9 @@ export const HeaderStyled = styled.nav`
           flex-direction: column;
           position: absolute
         }
-   }  
-} 
+      }
+   }
 
-.right {
 
   img {
       width: 30px;
@@ -56,7 +63,7 @@ export const HeaderStyled = styled.nav`
       object-fit: cover;
       cursor: pointer;      
     }
-}
+
   
 .profile {
 
@@ -66,7 +73,7 @@ export const HeaderStyled = styled.nav`
         border-radius: 5px;
       }
       span{
-        padding: 0px;
+        padding: 2px;
         cursor: pointer;
       }
       &:hover {

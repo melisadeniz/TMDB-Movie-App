@@ -1,22 +1,25 @@
 import { FooterStyled } from "../../StyledComponents/FooterStyled"
+import { useSelector, useDispatch } from "react-redux"
 import { Link } from 'react-router-dom';
 import routes from '../../routes';
 import { BsLinkedin, BsGithub } from "react-icons/bs"
 
 
-
 function Footer() {
-  return (
 
+  const state = useSelector((state) => state)
+
+
+  return (
  <FooterStyled>
  
-   <div className="footer">
-          <ul className="footer mx-5">
+   <div className={`footer ${state.theme ? "bg-light" : "bg-dark"}`}>
+          <ul className="mx-5">
             {routes
               .filter((item) => item.isFooter)
               .map((item, index) => (
                 <li className="footer-item" key={index}>
-                  <Link className="footer-item nav-link text-end" to={item.path}>
+                  <Link className="footer-item nav-link text-end text-light" to={item.path}>
                     {item.title}
                   </Link>
                 </li>
@@ -47,6 +50,7 @@ function Footer() {
         </div>
         
  </FooterStyled>
+
   )
 }
 

@@ -1,9 +1,9 @@
 import Search from "../components/Search";
+import Slider from "react-slick";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeTrendValue } from "../reduxStore/trendValue";
 import NotFound from "../components/NotFound";
-import ReactPaginate from "react-paginate";
 import Card from "../components/Card";
 import { Button } from "../StyledComponents/ButtonStyled";
 import { ContainerStyled } from "../StyledComponents/ContainerStyled";
@@ -13,18 +13,9 @@ import { fetchTrending } from "../data";
 function HomePage() {
   const { trend } = useSelector((state) => state);
   const [search, setSearch] = useState("");
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
-  // const [content, setContent] = useState([]);
-
-  // const fetchTrending = async () => {
-  //   const { data } = await axios.get(
-  //     `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}&page=${page}`
-  //   );
-
-  //   setContent(data.results);
-  // };
 
   const { isLoading, isError, error, isFetched, isFetching, data, ...query } =
     useQuery(["movies", trend], () => fetchTrending(trend), {
@@ -33,27 +24,27 @@ function HomePage() {
     });
 
   useEffect(() => {
-    setPage(
       data?.filter((item) =>
         item.title.toLowerCase().includes(search.toLowerCase())
-      ),
+      ,
       console.log(data)
     );
   }, [search]);
-
-  useEffect(() => {
-    window.scroll(0, 0);
-    fetchTrending();
-  }, [page]);
 
   function handleReset() {
     setSearch("");
   }
 
-  const handlePageChange = (page) => {
-    setPage(page);
-    window.scroll(0, 0);
-  };
+  // useEffect(() => {
+  //   window.scroll(0, 0);
+  //   fetchTrending();
+  // }, [page]);
+
+  
+  // const handlePageChange = (page) => {
+  //   setPage(page);
+  //   window.scroll(0, 0);
+  // };
 
   return (
     <>
@@ -108,18 +99,7 @@ function HomePage() {
                 marginTop: 10,
               }}
             >
-              <ReactPaginate
-                previousLabel={"previous"}
-                nextLabel={"next"}
-                breakLabel={"..."}
-                breakClassName={"break-me"}
-                pageCount={10}
-                onPageChange={handlePageChange}
-                containerClassName={"pagination"}
-                subContainerClassName={"pages pagination"}
-                activeClassName={"active"}
-              />
-            </div>
+             </div>
           </div>
         </div>
       </ContainerStyled>

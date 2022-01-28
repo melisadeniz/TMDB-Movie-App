@@ -17,55 +17,41 @@ function Header() {
   return (
      
 <HeaderStyled>     
- <nav className="navbar">
-  <div className="container">
-    <div className="row">
-     <div className="left col-4 d-flex">
-     <Logo src='./movielogo.png' alt='...'/>
-     <div>
-       <Link className="nav-link d-flex" to="/">Movies<IoMdArrowDropdown /></Link>
+ 
+<nav className={`nav border-2 ${state.theme ? "bg-light" : "bg-dark"}`}>
+  <div className="navcontainer">
+      <ul className='list-unstyled d-flex m-1'>
+         <li><div className='homepage mx-5'><Logo src='./movielogo.png' alt='...'/></div></li>
+         <li><Link className="text-light" to="/">HomePage</Link></li>
+         <li> <div className='movies mx-5'><Link className="d-flex text-light" to="/">Movies<IoMdArrowDropdown /></Link>
        <div className="categories">
-       <span><Link to="popular">Popular</Link></span>
-       <span><Link to="top-rated">Top Rated</Link></span>
+         <span><Link to="popular">Popular</Link></span>
+         <span><Link to="top-rated">Top Rated</Link></span>
        </div>
-      </div>
-    </div>
-  
-
-    <div className='col-4'>
-      <ul className='list-unstyled d-flex'>
-        {routes
-        .filter((item) => item.isNav)
-         .map((item, index) => (     
-          <li key={index}>
-           <Link className="mx-5" to={item.path}>{item.title}</Link>
-          </li>
-        ))} 
-      </ul>
-     </div>
-
-   <div className="right col-4 d-flex">
-     <div>
-       <Toggle className='mx-5'
+       </div>
+       </li>
+         <li> 
+           <Toggle className='mx-5'
        onClick={() => dispatch(switchTheme(state.theme))}>
          {
            state.theme ? <HiMoon /> : <CgSun />
          }
-       </Toggle>  
-     </div>
-       
-       <img src="profilepicture.jpg" alt="" />
-       <div className='profile d-flex'>
-       <Link to="/"><IoMdArrowDropdown /></Link>
+       </Toggle>
+        </li>
+         <li>
+           <img src="profilepicture.jpg" alt="" />
+       </li>
+         <li> 
+          <div className='profile d-flex'>
+       <Link className="text-light" to="/"><IoMdArrowDropdown /></Link>
        <div className="options">
        <span><Link to="profile">Profile</Link></span>
        <span><Link to="login">Login</Link></span>
        </div>
-      
-      </div>
-   </div>
-   </div>
-   </div>
+          </div>
+       </li>
+    </ul>   
+  </div>
  </nav>
 </HeaderStyled>                
       

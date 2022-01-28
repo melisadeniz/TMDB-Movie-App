@@ -1,4 +1,3 @@
-// import { ThemeProvider } from 'styled-components';
 import { Routes, Route} from 'react-router-dom';
 import {useSelector} from "react-redux"
 import Header from './components/base/Header';
@@ -10,14 +9,14 @@ function App() {
 
   const theme = useSelector((state) => state.theme)
 
-  document.getElementById("root").style.backgroundColor = theme ? "#D1D4C9":"#04293A"
-  document.getElementById("root").style.color = theme ? "black":"white"
+  document.getElementById("root").style.backgroundColor = theme ? "#BBBBBB":"#1A1A2E";
+  document.getElementById("root").style.color = theme ? "black" : "white";
 
 
   return (
     
     <>
-    
+
     <div className='app'>
      <Header />
      <br />
@@ -30,7 +29,7 @@ function App() {
        </Routes>
     </div>
      <Footer />
-
+  
     </>
    
   );

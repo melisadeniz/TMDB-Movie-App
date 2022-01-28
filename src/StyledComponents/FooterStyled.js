@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const FooterStyled = styled.footer`
   width: 100%;
-  padding: 10px;
   box-shadow: 0px 1px 5px black;
 
   
   ul {
     list-style-type: none;
+    padding: 5px;
   }
   ul li {
     margin-bottom: 5px;
