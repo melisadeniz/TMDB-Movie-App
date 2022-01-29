@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const CardStyled = styled.div`
-  background-color: ${props => props.theme === "dark" ? "#131414" : "white"};
+  background-color: ${(props) =>
+    props.theme === "dark" ? "#131414" : "white"};
   display: flex;
   width: 190px;
   height: 300px;
@@ -18,9 +20,9 @@ export const CardStyled = styled.div`
     width: 180px;
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
   }
-  
+
   .title {
     text-align: center;
     font-size: 13px;
@@ -44,5 +46,12 @@ export const CardStyled = styled.div`
   color: ${({ color }) => color || "#333"};
   &:hover {
     transform: scale(0.98);
+  }
+`;
+
+export const LinkStyled = styled(Link)`
+  text-decoration: none;
+  &:hover {
+    color: black;
   }
 `;

@@ -1,28 +1,36 @@
-import { CardStyled } from "../StyledComponents/CardStyled";
+import { CardStyled, LinkStyled } from "../StyledComponents/CardStyled";
 import { FiHeart } from "react-icons/fi";
+import { img_500, unavailable } from "../config";
+// import { useDispatch } from "react-redux";
 
 function Card(props) {
-  const { poster, title, date, vote_average } = props;
 
   return (
-    <CardStyled>
-      <div>
-        <img src={`https://image.tmdb.org/t/p/w500${poster}`} alt={title} />
+    <>
+      {
+         props.data?.map(item => <CardStyled>
+           <LinkStyled to={`/movie/${item.id}`}>
+      <div key={item.id}>
+        <img src={item.poster_path ? `${img_500}${item.poster_path}` : unavailable} 
+        alt={item.title} />
         <div className="cardtitle">
-          <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-            {vote_average}
+          <span className={`position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary ${item.vote_average > 6 ? "bg-primary" : "bg-danger"}`}>
+            {item.vote_average}
           </span>
-          <b className="title">{title}</b>
+          <b className="title">{item.title}</b>
           <span className="subtitle">
             <div>
               <FiHeart />
             </div>
-            <span className="subtitle">{date}</span>
+            <span className="subtitle">{item.release_date}</span>
           </span>
         </div>
       </div>
+      </LinkStyled>
     </CardStyled>
-  );
+  )}
+  </>
+ );
 }
 
 export default Card;
