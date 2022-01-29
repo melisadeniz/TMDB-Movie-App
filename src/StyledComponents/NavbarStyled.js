@@ -83,8 +83,11 @@ export const HeaderStyled = styled.nav`
   }
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    flex-direction: column;
-
-    padding-top: 15px;
+  .nav {position: relative;}
+  Link {
+    float: none;
+    display: block;
+    text-align: left;
+  }
   }
 `;

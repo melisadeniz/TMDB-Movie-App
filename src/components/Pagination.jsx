@@ -1,5 +1,5 @@
 import ReactPaginate from "react-paginate";
-import { sliderHandler } from "../reduxStore/Slider";
+import { sliderHandler } from "../reduxStore/slider";
 import { useDispatch } from "react-redux";
 
 function Pagination({ data }) {

@@ -2,7 +2,7 @@ import ReactPaginate from "react-paginate";
 import { useQuery } from "react-query";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSearchMovies } from "../data";
-import { sliderHandler } from "../reduxStore/Slider";
+import { sliderHandler } from "../reduxStore/slider";
 import Card from "./Card";
 
 function SearchResults() {
@@ -23,7 +23,7 @@ function SearchResults() {
 
   return (
     <>
-      <div className="container text-center my-2">
+      <div className="container row d-flex my-2 offset-1">
         <Card
           data={searchData?.data?.slice(currentPage, currentPage + perPage)}
         />
@@ -35,6 +35,7 @@ function SearchResults() {
             404 - Not Found!
           </div>
         )}
+        <div className="container row my-2">
         <ReactPaginate
           breakLabel="..."
           nextLabel=" >>"
@@ -56,8 +57,9 @@ function SearchResults() {
           activeLinkClassName={"fw-bold fs-4 text-dark p-2 align-middle"}
           initialPage={0}
         />
+        </div>
       </div>
-      ;
+      
     </>
   );
 }

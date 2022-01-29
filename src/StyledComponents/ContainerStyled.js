@@ -24,4 +24,8 @@ export const ContainerStyled = styled.div`
     display: flex;
     flex-direction: column;
   }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+
+}
 `;

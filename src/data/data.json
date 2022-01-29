@@ -7,13 +7,11 @@
     "instagram": "https://www.instagram.com/"
   },
   "seenList": {
-    "seenFilms": [
-    ],
+    "seenFilms": [],
     "totalCount": 0
   },
   "favorites": {
-    "favoriteFilms": [
-    ],
+    "favoriteFilms": [],
     "totalCount": 0
   },
   "joinDate": "December 2021"

@@ -13,7 +13,7 @@ export const CardStyled = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   text-align: center;
   padding: 5px;
-  margin: 3px 0px;
+  margin: 15px 10px;
   font-family: "Montserrat", sans-serif;
 
   .cardtitle {

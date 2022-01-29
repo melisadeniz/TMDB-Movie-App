@@ -25,7 +25,7 @@ function Header() {
                 className={`text-decoration-none mx-3 ${state.theme ? "text-dark" : "text-light"}`}
                 to="/"
               >
-                HomePage
+                Home Page
               </Link>
             </li>
             <li>

@@ -17,9 +17,9 @@ export const DetailModal = styled.div`
     display: flex;
     flex-direction: column;
     overflow: scroll;
-    width: 700px;
-    height: 400px;
-    border-radius: 10px;
+    width: 780px;
+    height: 450px;
+    border-radius: 20px;
     padding: 20px 20px;
   }
 
@@ -27,7 +27,7 @@ export const DetailModal = styled.div`
     display: none;
   }
 
-  .content_landscape {
+  .content-landscape {
     object-fit: contain;
     border-radius: 10px;
   }
@@ -44,23 +44,23 @@ export const DetailModal = styled.div`
   }
 
   .content-about {
-    padding: 10px;
+    padding: 0px 15px;
     width: 95%;
     height: 90%;
     display: flex;
     flex-direction: column;
     font-family: "Roboto", sans-serif;
     justify-content: space-evenly;
-    font-weight: 300;
+    font-weight: 200;
   }
 
   .content-description {
     display: flex;
-    height: 40%;
+    height: 45%;
     overflow-y: scroll;
     padding: 15px;
     border-radius: 20px;
-    scrollbar-width: thin; /* Firefox */
+    scrollbar-width: thin; 
     box-shadow: inset 0 0 5px #000000;
     text-align: justify;
   }

@@ -19,9 +19,10 @@ function Detail(props) {
   const singleData = singleMovieData?.data?.data;
 
   return (
+    
     <DetailModal>
       <div className="bg-modal">
-        <div className="modal-content">
+        <div className="modal-content border-3">
           <Link className="close text-decoration-none" to="/">
             +
           </Link>
@@ -38,7 +39,7 @@ function Detail(props) {
             />
 
             <img
-              className="content-landscape"
+              className="content-landscape mx-3 my-1"
               src={
                 singleData?.backdrop_path
                   ? `${img_500}/${singleData?.backdrop_path}`
@@ -59,7 +60,7 @@ function Detail(props) {
                 </h6>
               </span>
               <i className="tagline">{singleData?.tagline}</i>
-              <p className="content-description">{singleData?.overview}</p>
+              <h6 className="content-description mx-1">{singleData?.overview}</h6>
               {/* <div>
          <Carousel id={singleData?.id} media_type={singleData?.media_type} />
         </div> */}
