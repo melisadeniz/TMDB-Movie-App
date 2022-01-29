@@ -1,12 +1,17 @@
 import { ContainerStyled } from "../StyledComponents/ContainerStyled"
 
-function TopRated(props) {
+function SortFilter(props) {
 
   return (
     <ContainerStyled>
-    <h1>TopRated</h1>
+
+
+       <h1>Popular</h1>
+
+       
     </ContainerStyled>
+ 
   )
 }
 
-export default TopRated
+export default SortFilter

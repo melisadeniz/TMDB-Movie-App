@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerStyled = styled.div`
   background-color: ${({ theme }) => theme.dark};
   color: ${({ theme }) => theme.dark};
-  display: flex;
+
 
   h2 {
     font-family: fantasy;

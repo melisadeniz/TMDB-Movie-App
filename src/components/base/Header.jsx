@@ -17,7 +17,7 @@ function Header() {
   return (
     <HeaderStyled>
       <nav className={`nav border-2 ${state.theme ? "bg-light" : "bg-dark"}`}>
-        <div className="d-flex offset-3">
+        <div className="d-flex mx-4">
           <ul className="list-unstyled d-flex my-2">
             <li>
               <Logo src="./movielogoo.png" alt="..." />
@@ -42,16 +42,21 @@ function Header() {
                   <span>
                     <Link 
                     className={`text-decoration-none mx-3 ${state.theme ? "text-dark" : "text-light"}`}
-                    to="popular">Popular</Link>
+                    to="/sort-filter/:popular">Popular</Link>
                   </span>
                   <span>
                     <Link 
                     className={`text-decoration-none mx-3 ${state.theme ? "text-dark" : "text-light"}`}
-                    to="top-rated">Top Rated</Link>
+                    to="/sort-filter/:top_rated">Top Rated</Link>
                   </span>
                 </div>
               </div>
             </li>
+            </ul>
+            </div>
+
+            <div className="d-flex ms-auto mx-5">
+            <ul className="list-unstyled d-flex my-2">
             <li>
               <Toggle
                 className="mx-5"

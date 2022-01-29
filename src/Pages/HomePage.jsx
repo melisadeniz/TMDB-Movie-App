@@ -30,18 +30,19 @@ function HomePage() {
 
   return (
     <ContainerStyled>
+      <div className="container">
       <SearchButton
       // handleReset={handleReset}
       />
-
+    </div> 
+      
       {search !== "" ? (
         <SearchResults />
       ) : (
         <>
           <div className="container">
-            <br />
 
-            <div className="d-flex">
+            <div className="d-flex m-2">
               <h2>TRENDING</h2>
               <div className="btn-group ms-auto">
                 <Button

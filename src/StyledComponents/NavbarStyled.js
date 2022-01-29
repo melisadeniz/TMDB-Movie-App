@@ -24,7 +24,7 @@ export const HeaderStyled = styled.nav`
     width: 100%;
     position: fixed;
     font-size: 14px;
-    padding: 7px;
+    padding: 6px;
     z-index: 998;
     box-shadow: 0px 1px 5px black;
     font-family: "Montserrat", sans-serif;
