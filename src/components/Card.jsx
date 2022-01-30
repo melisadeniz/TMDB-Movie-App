@@ -1,36 +1,60 @@
 import { CardStyled, LinkStyled } from "../StyledComponents/CardStyled";
-import { FiHeart } from "react-icons/fi";
+import { FiHeart, FiBookmark } from "react-icons/fi";
+import { useDispatch, useSelector } from 'react-redux';
 import { img_500, unavailable } from "../config";
 // import { useDispatch } from "react-redux";
 
 function Card(props) {
 
+  const dispatch = useDispatch()
+  const { user } = useSelector((state) => state)
+  const favoritesList = user?.favoritesList?.favoritesFilms
+  const seenList = user?.seenList?.seenFilms
+
+
   return (
     <>
-      {
-         props.data?.map(item => <CardStyled>
-           <LinkStyled to={`/movie/${item.id}`}>
-      <div key={item.id}>
-        <img src={item.poster_path ? `${img_500}${item.poster_path}` : unavailable} 
-        alt={item.title} />
-        <div className="cardtitle">
-          <span className={`position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary ${item.vote_average > 6 ? "bg-primary" : "bg-danger"}`}>
-            {item.vote_average}
-          </span>
-          <b className="title">{item.title}</b>
-          <span className="subtitle">
-            <div>
-              <FiHeart />
+      {props.data?.map((item) => (
+        <CardStyled>
+          <LinkStyled to={`/movie/${item.id}`}>
+            <div key={item.id}>
+              <img
+                src={
+                  item.poster_path
+                    ? `${img_500}${item.poster_path}`
+                    : unavailable
+                }
+                alt={item.title}
+              />
+              <div className="cardtitle">
+                <span
+                  className={`position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary ${
+                    item.vote_average > 6 ? "bg-primary" : "bg-danger"
+                  }`}
+                >
+                  {item.vote_average}
+                </span>
+                <b className="title">{item.title}</b>
+                <span className="subtitle">
+                  <div>
+                    {user.userLogin && (
+                      <div>
+                        <FiHeart isFav={favoritesList?.includes(item.id)}
+                        onClick={() => dispatch(addFavList(item.id))} />
+                        <FiBookmark isSeen={seenList?.includes(item.id)}
+                        onClick={() => dispatch(addSeenList(item.id))} />
+                      </div>
+                    )}
+                  </div>
+                  <span className="subtitle">{item.release_date}</span>
+                </span>
+              </div>
             </div>
-            <span className="subtitle">{item.release_date}</span>
-          </span>
-        </div>
-      </div>
-      </LinkStyled>
-    </CardStyled>
-  )}
-  </>
- );
+          </LinkStyled>
+        </CardStyled>
+      ))}
+    </>
+  );
 }
 
 export default Card;

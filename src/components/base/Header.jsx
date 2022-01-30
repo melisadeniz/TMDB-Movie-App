@@ -41,7 +41,6 @@ function Header() {
 
   const onChange = (e) => {
     setSearch(e.target.value);
-
     dispatch(searchValue(e.target.value));
   };
 

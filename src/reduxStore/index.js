@@ -4,6 +4,7 @@ import trendReducer from "./trendValue";
 import { searchReducer } from "./searchValue";
 import { paginationReducer } from "./pagination";
 import { userReducer } from "./userValidation";
+import { loadMoreReducer } from "./LoadMore";
 
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   theme: themeReducer,
   search: searchReducer,
   pagination: paginationReducer,
+  load: loadMoreReducer,
 });
 
 const store = createStore(rootReducer);
