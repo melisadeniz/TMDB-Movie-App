@@ -8,7 +8,7 @@ import { loadMoreMovies, resetLoad } from '../reduxStore/LoadMore';
 function SortFilter(props) {
 
   const dispatch = useDispatch()
-  const { load, theme, genres, sortFilter } = useSelector(state => state)
+  const { } = useSelector(state => state)
   const params = useParams() 
 
 
@@ -17,21 +17,7 @@ function SortFilter(props) {
 
 
  
-     {/* && <Button
-          onClick={() => {
-            dispatch(loadMoreMovies())
-          }} >
-          Load More
-        </Button>
-      }
-    </div> 
 
-    <div>
-      {
-        sortFilter?.results[0]?.data?.data?.results?.length === 0 && <div>No results found!</div>
-      }
-    </div>
- */}
 
 
        
