@@ -2,7 +2,7 @@ import { combineReducers, createStore } from "redux";
 import themeReducer from "./themeSwitch";
 import trendReducer from "./trendValue";
 import { searchReducer } from "./searchValue";
-import { sliderReducer } from "./slider";
+import { paginationReducer } from "./pagination";
 
 
 const rootReducer = combineReducers({
@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   trend: trendReducer,
   theme: themeReducer,
   search: searchReducer,
-  slider: sliderReducer,
+  pagination: paginationReducer,
 });
 
 const store = createStore(rootReducer);

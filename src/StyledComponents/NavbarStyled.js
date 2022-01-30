@@ -30,6 +30,81 @@ export const HeaderStyled = styled.nav`
     font-family: "Montserrat", sans-serif;
   }
 
+  .search-box {
+	border: solid 1px black;
+	display: inline-block;
+	position: relative;
+	border-radius: 50px;
+	input[type="text"] {
+		font-family: Raleway, sans-serif;
+		font-size: 10px;
+		font-weight: bold;
+		width: 12px;
+		height: 18px;
+		padding: 7px 10px 5px 10px;
+		border: none;
+		box-sizing: border-box;
+		border-radius: 50px;
+		transition: width $search-time cubic-bezier(0.68, -0.55, 0.27, 1.55) $reset-time;
+		&:focus {
+			outline: none;
+		}
+		&:focus, &:not(:placeholder-shown) {
+			width: 200px;
+			transition: width $search-time cubic-bezier(0.68, -0.55, 0.27, 1.55);
+			+ button[type="reset"] {
+				bottom: -3px;
+				right: 2px;
+				transition:
+					bottom $reset-time ease-out $search-time
+				, right $reset-time ease-out $search-time;
+			}
+			+ button[type="reset"]:after {
+				top: 7px;
+				right: 15px;
+				opacity: 1;
+				transition:
+					top $reset-time ease-out ($search-time + $reset-time)
+				, right $reset-time ease-out ($search-time + $reset-time)
+				, opacity $reset-time ease ($search-time + $reset-time);
+			}
+		}
+	}
+	button[type="reset"] {
+		background-color: transparent;
+		width: 32px;
+		height: 28px;
+		border: 0;
+		padding: 0;
+		outline: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		bottom: -15px;
+		right: -18px;
+		transition: bottom $reset-time ease-out $reset-time, right $reset-time ease-out $reset-time;
+		&:before, &:after {
+			content: "";
+			height: 13px;
+			border-left: solid 1px black;
+			position: absolute;
+			transform: rotate(-45deg);
+		}
+		&:after {
+			transform: rotate(45deg);
+			opacity: 0;
+			top: -20px;
+			right: -10px;
+			transition:
+				top $reset-time ease-out
+			, right $reset-time ease-out
+			, opacity $reset-time ease-out;
+		}
+	}
+}
+
+
   .movies {
     .categories {
       display: none;

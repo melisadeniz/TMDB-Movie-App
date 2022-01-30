@@ -2,7 +2,7 @@ import ReactPaginate from "react-paginate";
 import { useQuery } from "react-query";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSearchMovies } from "../data";
-import { sliderHandler } from "../reduxStore/slider";
+import { paginationHandler } from "../reduxStore/pagination";
 import Card from "./Card";
 
 function SearchResults() {
@@ -39,7 +39,7 @@ function SearchResults() {
         <ReactPaginate
           breakLabel="..."
           nextLabel=" >>"
-          onPageChange={(e) => dispatch(sliderHandler(e.selected, perPage))}
+          onPageChange={(e) => dispatch(paginationHandler(e.selected, perPage))}
           pageRangeDisplayed={3}
           pageCount={pageCount}
           previousLabel="<< "
@@ -47,7 +47,7 @@ function SearchResults() {
             "list-unstyled d-flex align-items-center justify-content-center"
           }
           previousLinkClassName={
-            "text-dark fw-bold text-decoration-none mx-2 fs-5"
+            "text-decoration-none text-dark fw-bold  mx-2 fs-5"
           }
           nextLinkClassName={"text-dark fw-bold text-decoration-none mx-2 fs-5"}
           disabledLinkClassName={"text-muted"}
