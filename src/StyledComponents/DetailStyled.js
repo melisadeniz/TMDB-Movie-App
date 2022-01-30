@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const DetailModal = styled.div`
+
+
   .bg-modal {
+
+    flex: 1;
     z-index: 999;
     width: 100%;
     height: 100%;

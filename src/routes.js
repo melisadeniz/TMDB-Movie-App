@@ -18,7 +18,7 @@ const routes = [
   {title: "Search", path: "search", element: Search, isFooter: false},
   {title: "About", path: "about", element: About, isFooter: true},
   {title: "Contact", path: "contact", element: Contact, isFooter: true},
-  {title: "Profile", path: "profile", element: Profile, isFooter: false},
+  {title: "Profile", path: "/profile", element: Profile, isFooter: false},
   {title: "Login", path: "login", element: Login, isFooter: false},
   {title:"NotFound", path: "*", element: NotFound, isFooter: false}
 ]

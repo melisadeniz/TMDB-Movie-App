@@ -5,12 +5,13 @@ import Footer from "./components/base/Footer";
 import routes from "./routes";
 
 function App() {
-  const theme = useSelector((state) => state.theme);
+  const state = useSelector((state) => state);
+  
 
-  document.getElementById("root").style.backgroundColor = theme
+  document.getElementById("root").style.backgroundColor = state.theme
     ? "#BBBBBB"
     : "#2C394B";
-  document.getElementById("root").style.color = theme ? "black" : "white";
+  document.getElementById("root").style.color = state.theme ? "black" : "white";
 
   return (
     <>

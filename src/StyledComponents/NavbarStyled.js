@@ -8,6 +8,15 @@ export const Logo = styled.img`
   }
 `;
 
+export const  ProfileImage = styled.img`
+   border-radius: 100%;
+    width: ${props => props.width};
+    box-shadow: 0 0 5px rgb(34, 40, 49, 0.5);
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    margin: 10px 0 5px;
+  }
+`;
+
 export const Toggle = styled.button`
   cursor: pointer;
   border-radius: 50%;
@@ -29,6 +38,7 @@ export const HeaderStyled = styled.nav`
     box-shadow: 0px 1px 5px black;
     font-family: "Montserrat", sans-serif;
   }
+
 
   .search-box {
 	border: solid 1px black;
@@ -151,8 +161,8 @@ export const HeaderStyled = styled.nav`
     &:hover {
       .options {
         display: flex;
-        flex-direction: column;
-        position: absolute;
+        flex-direction: column-reverse;
+        position: relative;
       }
     }
   }

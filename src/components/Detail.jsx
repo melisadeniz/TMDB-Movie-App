@@ -1,9 +1,11 @@
-import { fetchSingleMovie } from "../data";
+import { fetchSingleMovie, fetchSingleMovieCredits } from "../data";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { DetailModal } from "../StyledComponents/DetailStyled";
 import { img_500, unavailable, unavailableLandscape } from "../config";
+
+import { ContainerStyled } from "../StyledComponents/ContainerStyled";
 
 function Detail(props) {
   const { movieId } = useParams();
@@ -16,12 +18,20 @@ function Detail(props) {
     }
   );
 
+  const movieCreditsQuery = useQuery(["moviecredits", movieId], () => fetchSingleMovieCredits(movieId), { retry: false })
+
   const singleData = singleMovieData?.data?.data;
+  const movieCastData = movieCreditsQuery?.data?.data?.cast;
 
   return (
-    
+    <ContainerStyled>
+    <div className="back" >
     <DetailModal>
+      
       <div className="bg-modal">
+
+
+
         <div className="modal-content border-3">
           <Link className="close text-decoration-none" to="/">
             +
@@ -68,7 +78,11 @@ function Detail(props) {
           </div>
         </div>
       </div>
+      
     </DetailModal>
+
+    </div>
+    </ContainerStyled>
   );
 }
 

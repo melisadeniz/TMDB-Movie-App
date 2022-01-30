@@ -6,7 +6,7 @@ import { paginationHandler } from "../reduxStore/pagination";
 import Card from "./Card";
 
 function SearchResults() {
-  const { search, slider: currentPage } = useSelector((state) => state);
+  const { search, pagination: currentPage } = useSelector((state) => state);
   const dispatch = useDispatch();
   const perPage = 4;
   let pageCount;

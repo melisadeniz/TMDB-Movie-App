@@ -1,42 +1,49 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { useQuery } from "react-query";
 import { searchValue } from "../../reduxStore/searchValue";
 import { switchTheme } from "../../reduxStore/themeSwitch";
 import {
   HeaderStyled,
   Logo,
   Toggle,
+  ProfileImage
 } from "../../StyledComponents/NavbarStyled";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
 import { DebounceInput } from "react-debounce-input";
-import { fetchSingleMovie } from "../../data";
-import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import { fetchSearchMovies } from "../../data";
+import { unavailable } from "../../config";
 
 function Header() {
-
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
-  const { movieId } = useParams();
-  // const [text, setText] = useState([])
- 
+  const [movieMatch, setMovieMatch] = useState([]);
+  const { search, user } = useSelector((state) => state);
+
+
   const singleMovieData = useQuery(
-    ["movie", movieId],
-    () => fetchSingleMovie(movieId),
-    {
-      retry: false,
-    }
+    ["search movies", search],
+    () => fetchSearchMovies(search),
+    { select: (data) => data.data.results, retry: false }
   );
 
-  // const  = (text) => {
-  //   if (text.length>0) {
-  //     matches = singleData.data.title }
-  //   setText(text)
- 
+  const setSearch = (value) => {
+    let matches = singleMovieData?.data?.filter((movie) => {
+      const regex = new RegExp(`${value}`, "gi");
+      return movie.title.match(regex);
+    });
+    setMovieMatch(matches);
+  };
 
-  const singleData = singleMovieData?.data?.data;
+  const onChange = (e) => {
+    setSearch(e.target.value);
+
+    dispatch(searchValue(e.target.value));
+  };
 
   return (
     <HeaderStyled>
@@ -98,22 +105,23 @@ function Header() {
               <form className="search-box">
                 <DebounceInput
                   type="text"
+                  id="search"
+                  list="results" 
+                  name="search"
+                  debounceTimeout={300}
                   placeholder="Search"
-                  debounceTimeout={500}
-                  onChange={(e) => dispatch(searchValue(e.target.value))}
+                  onChange={(e) => onChange(e)}
                 />
-                <button type="reset"></button>       
-              </form>
-              <datalist id={singleData?.data?.id} >
-                  {
-                    singleData?.data?.map((item) => {
-
-                      return(
-                  <option>{item.title}</option>
-                      )
-                    })
-                  }
+               
+                <datalist id="results">
+                  {movieMatch &&
+                    movieMatch.map((item) => (
+                      <option value={item.title}>{item.title}</option>
+                    ))}
                 </datalist>
+                <button type="reset"></button>  
+              </form>       
+              
             </li>
             <li>
               <Toggle
@@ -123,9 +131,9 @@ function Header() {
                 {state.theme ? <HiMoon /> : <CgSun />}
               </Toggle>
             </li>
-            <li className="d-flex">
-              <img src="profilepicture.jpg" alt="" />
-              <div className="profile d-flex">
+            {!user.userLogin ?  <li>
+              <div className="profile d-flex"> 
+
                 <Link
                   className={`${state.theme ? "text-dark" : "text-light"}`}
                   to="/"
@@ -138,24 +146,25 @@ function Header() {
                       className={`text-decoration-none ${
                         state.theme ? "text-dark" : "text-light"
                       }`}
-                      to="profile"
-                    >
-                      Profile
-                    </Link>
-                  </span>
-                  <span>
-                    <Link
-                      className={`text-decoration-none ${
-                        state.theme ? "text-dark" : "text-light"
-                      }`}
                       to="login"
                     >
                       Login
                     </Link>
+              
                   </span>
                 </div>
               </div>
             </li>
+            
+            :
+
+            <li className="d-flex">
+                <Link to="/profile" >
+                    <ProfileImage width={"30px"} src={user.avatarUrl} alt="" />
+                </Link>
+            </li>
+            
+            }
           </ul>
         </div>
       </nav>

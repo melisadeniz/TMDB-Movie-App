@@ -1,5 +1,5 @@
 import ReactPaginate from "react-paginate";
-import { sliderHandler } from "../reduxStore/slider";
+import { paginationHandler } from "../reduxStore/pagination";
 import { useDispatch } from "react-redux";
 
 function Pagination({ data }) {
@@ -17,7 +17,7 @@ function Pagination({ data }) {
         <ReactPaginate
           breakLabel="..."
           nextLabel=">>"
-          onPageChange={(e) => dispatch(sliderHandler(e.selected, perPage))}
+          onPageChange={(e) => dispatch(paginationHandler(e.selected, perPage))}
           pageRangeDisplayed={3}
           pageCount={pageCount}
           previousLabel="<<"

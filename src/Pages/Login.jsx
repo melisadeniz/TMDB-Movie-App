@@ -12,6 +12,8 @@ function Login(props) {
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  
+
 
   useEffect(() => {
     if (user.userLogin) {
@@ -19,17 +21,14 @@ function Login(props) {
     }
   }, [user, navigate])
 
-  // const userData = data.map( (data) => {
 
   return (
     <ContainerStyled>
       <div className="login my-5">
-        {/* <img src={userData.avatar} alt={userData.username} /> */}
         <form className="login_form">
           <input
             type="username"
             placeholder="Username"
-            value={username}  // {userData.username}
             onChange={(e) => setUsername(e.target.value)}
 
           />
@@ -37,7 +36,6 @@ function Login(props) {
           <input
             type="password"
             placeholder="Password"
-            value={password}  // {userData.password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <Button type="submit" className="submit_btn m-2" onClick={() => {
