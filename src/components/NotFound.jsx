@@ -1,4 +1,4 @@
-import { ContainerStyled } from "../StyledComponents/ContainerStyled";
+import { ContainerStyled } from "../styledComponents/ContainerStyled";
 
 function NotFound(props) {
   return (

@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { validateUser } from '../reduxStore/userValidation';
-import { ContainerStyled } from "../StyledComponents/ContainerStyled";
-import { Button } from "../StyledComponents/ButtonStyled";
+import { ContainerStyled } from "../styledComponents/ContainerStyled";
+import { Button } from "../styledComponents/ButtonStyled";
 
 function Login(props) {
  

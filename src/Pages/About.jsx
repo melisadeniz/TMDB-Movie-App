@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerStyled } from "../StyledComponents/ContainerStyled";
+import { ContainerStyled } from "../styledComponents/ContainerStyled";
 
 function About() {
   return (

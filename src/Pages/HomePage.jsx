@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { changeTrendValue } from "../reduxStore/trendValue";
 // import NotFound from "../components/NotFound";
 import Card from "../components/Card";
-import { Button } from "../StyledComponents/ButtonStyled";
-import { ContainerStyled } from "../StyledComponents/ContainerStyled";
+import { Button } from "../styledComponents/ButtonStyled";
+import { ContainerStyled } from "../styledComponents/ContainerStyled";
 import { useQuery } from "react-query";
 import { fetchTrending, fetchDiscover } from "../data";
 

@@ -1,5 +1,5 @@
 import { DebounceInput } from "react-debounce-input";
-import { Button } from "../StyledComponents/ButtonStyled";
+import { Button } from "../styledComponents/ButtonStyled";
 import { useDispatch } from "react-redux";
 import { searchValue } from "../reduxStore/searchValue";
 

@@ -1,4 +1,4 @@
-import { ProfileGrid } from "../StyledComponents/ProfileStyled";
+import { ProfileGrid } from "../styledComponents/ProfileStyled";
 import { useSelector } from 'react-redux';
 
 function Profile(props) {

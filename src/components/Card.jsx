@@ -1,14 +1,15 @@
-import { CardStyled, LinkStyled } from "../StyledComponents/CardStyled";
+import { CardStyled, LinkStyled } from "../styledComponents/CardStyled";
 import { FiHeart, FiBookmark } from "react-icons/fi";
 import { useDispatch, useSelector } from 'react-redux';
 import { img_500, unavailable } from "../config";
+import { addFavList, addSeenList } from "../reduxStore/userValidation"
 // import { useDispatch } from "react-redux";
 
 function Card(props) {
 
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state)
-  const favoritesList = user?.favoritesList?.favoritesFilms
+  const favoriteList = user?.favoriteList?.favoriteFilms
   const seenList = user?.seenList?.seenFilms
 
 
@@ -39,7 +40,7 @@ function Card(props) {
                   <div>
                     {user.userLogin && (
                       <div>
-                        <FiHeart isFav={favoritesList?.includes(item.id)}
+                        <FiHeart isFav={favoriteList?.includes(item.id)}
                         onClick={() => dispatch(addFavList(item.id))} />
                         <FiBookmark isSeen={seenList?.includes(item.id)}
                         onClick={() => dispatch(addSeenList(item.id))} />

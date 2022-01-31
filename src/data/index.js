@@ -13,5 +13,8 @@ export const fetchDiscover = () => BASE_AXIOS.get(`/discover/movie?api_key=${API
 
 export const fetchTrending = (trendValue) => BASE_AXIOS.get(`/trending/movie/${trendValue}?api_key=${API_KEY}&page=2`);
 
-export const fetchPopular = (type, sortingValue, page, startDate, endDate, genres) => BASE_AXIOS.get(`/movie/${type}?api_key=${API_KEY}&sort_by=${sortingValue}&page=${page}&release_date.gte=${startDate}&release_date.lte=${endDate}&with_genres=${genres.toString()}`);
+export const fetchPopularMovies = (type, sortingValue, page, startDate, endDate, genres) => BASE_AXIOS.get(`/movie/${type}?api_key=${API_KEY}&sort_by=${sortingValue}&page=${page}&release_date.gte=${startDate}&release_date.lte=${endDate}&with_genres=${genres.toString()}`);
+
+export const fetchMovieGenres = () => BASE_AXIOS.get(`/genre/movie/list?api_key=${API_KEY}`);
+
 

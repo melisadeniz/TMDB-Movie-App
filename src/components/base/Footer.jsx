@@ -1,4 +1,4 @@
-import { FooterStyled } from "../../StyledComponents/FooterStyled";
+import { FooterStyled } from "../../styledComponents/FooterStyled";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import routes from "../../routes";

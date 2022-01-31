@@ -174,5 +174,7 @@ export const HeaderStyled = styled.nav`
     display: block;
     text-align: left;
   }
+
+
   }
 `;

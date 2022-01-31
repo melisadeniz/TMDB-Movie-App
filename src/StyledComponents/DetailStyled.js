@@ -2,10 +2,17 @@ import styled from "styled-components";
 
 export const DetailModal = styled.div`
 
+  .detail-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0px
+  }
+
 
   .bg-modal {
-
-    flex: 1;
+    
     z-index: 999;
     width: 100%;
     height: 100%;
@@ -21,8 +28,8 @@ export const DetailModal = styled.div`
     display: flex;
     flex-direction: column;
     overflow: scroll;
-    width: 780px;
-    height: 450px;
+    width: 760px;
+    height: 460px;
     border-radius: 20px;
     padding: 20px 20px;
   }
@@ -34,6 +41,7 @@ export const DetailModal = styled.div`
   .content-landscape {
     object-fit: contain;
     border-radius: 10px;
+    margin: 5px 120px;
   }
 
   .content-portrait {
@@ -43,32 +51,38 @@ export const DetailModal = styled.div`
   }
 
   .tagline {
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     align-self: center;
   }
 
   .content-about {
-    padding: 0px 15px;
+    padding: 0px 20px;
     width: 95%;
     height: 90%;
     display: flex;
     flex-direction: column;
     font-family: "Roboto", sans-serif;
     justify-content: space-evenly;
-    font-weight: 200;
+    font-weight: 100;
   }
 
   .content-description {
     display: flex;
-    height: 45%;
+    height: 30%;
     overflow-y: scroll;
-    padding: 15px;
+    padding: 20px 20px 40px 20px ;
     border-radius: 20px;
     scrollbar-width: thin; 
     box-shadow: inset 0 0 5px #000000;
-    text-align: justify;
+
+    p { 
+     font-size: small;
   }
 
+  }
+    
+    
+  
   .content-description::-webkit-scrollbar {
     display: none;
   }
@@ -108,4 +122,24 @@ export const DetailModal = styled.div`
       font-size: 22px;
     }
   }
+
+  .carousel {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px;
+    flex-direction: row;
+    width: 750px;
+    height: 300px;
+    border-radius: 20px;
+  }
+
+    .carouselItem {  
+      object-fit: contain;
+      padding: 10px;
+    }
+    .carouselItem__img {
+      border-radius: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0px 0px 5px black;
+    }
 `;

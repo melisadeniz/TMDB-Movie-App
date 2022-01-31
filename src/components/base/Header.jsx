@@ -10,13 +10,12 @@ import {
   Logo,
   Toggle,
   ProfileImage
-} from "../../StyledComponents/NavbarStyled";
+} from "../../styledComponents/NavbarStyled";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
 import { DebounceInput } from "react-debounce-input";
 import { fetchSearchMovies } from "../../data";
-import { unavailable } from "../../config";
 
 function Header() {
   const dispatch = useDispatch();
@@ -48,7 +47,7 @@ function Header() {
     <HeaderStyled>
       <nav className={`nav border-2 ${state.theme ? "bg-light" : "bg-dark"}`}>
         <div className="d-flex mx-4">
-          <ul className="list-unstyled d-flex my-2">
+          <ul className="nav-menu list-unstyled d-flex my-2">
             <li>
               <Logo src="./movielogoo.png" alt="..." />
               <Link

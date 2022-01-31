@@ -18,11 +18,13 @@ export const ContainerStyled = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
   }
 
   .login_form {
     display: flex;
     flex-direction: column;
+    margin: 30px 0;
   }
 
   @media (max-width: ${({ theme }) => theme.mobile}) {

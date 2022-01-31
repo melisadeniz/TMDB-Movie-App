@@ -1,4 +1,4 @@
-import init_user from "../data/data.json";
+import init_user from "../data/init_user.json";
 
 const VALIDATE_USER = "VALIDATE_USER";
 const LOGOUT_USER = "LOGOUT_USER"
@@ -21,6 +21,9 @@ export const addSeenList = (movieId) => ({
     payload: movieId
 })
 
+export const userLogout = () => ({
+  type: LOGOUT_USER
+})
 
 //REDUCER
 const userReducer = (user, action) => {
@@ -35,8 +38,8 @@ const userReducer = (user, action) => {
         ? { ...user, userLogin: true }
         : { ...user, userLogin: false }
         case ADD_FAV_MOVIES:
-            return !user.favoritesList.favoritesFilms.includes(action.payload) ?
-                { ...user, favoritesList: { favoritesFilms: [...user.favoritesList.favoritesFilms, action.payload], totalCount: user.favoritesList.totalCount + 1 } } : user
+            return !user.favoriteList.favoriteFilms.includes(action.payload) ?
+                { ...user, favoriteList: { favoriteFilms: [...user.favoriteList.favoriteFilms, action.payload], totalCount: user.favoriteList.totalCount + 1 } } : user     
         case ADD_SEEN_MOVIES:
             return !user.seenList.seenFilms.includes(action.payload) ?
                 { ...user, seenList: { seenFilms: [...user.seenList.seenFilms, action.payload], totalCount: user.seenList.totalCount + 1 } } : user

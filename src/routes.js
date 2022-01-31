@@ -1,11 +1,11 @@
-import HomePage from './Pages/HomePage';
-import About from './Pages/About';
-import SortFilter from './Pages/SortFilter';
+import HomePage from './pages/HomePage';
+import About from './pages/About';
+import SortFilter from './pages/SortFilter';
 import Detail from './components/Detail';
 import Search from './components/SearchResults';
-import Contact from './Pages/Contact';
-import Profile from './Pages/Profile';
-import Login from './Pages/Login';
+import Contact from './pages/Contact';
+import Profile from './pages/Profile';
+import Login from './pages/Login';
 import NotFound from './components/NotFound';
 
 
