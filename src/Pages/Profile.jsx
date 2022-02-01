@@ -1,33 +1,37 @@
 import { ProfileGrid } from "../styledComponents/ProfileStyled";
 import { useSelector } from 'react-redux';
+import { FiInstagram, FiTwitter } from "react-icons/fi";
+
 
 function Profile(props) {
 
-  const { user} = useSelector(state => state)
+  const { user } = useSelector(state => state)
 
-  return (
-    <ProfileGrid>
+
+  return ( 
+  
+  <ProfileGrid>
      
         <div className="login my-5">
         <img width={"200px"} src={user.avatarUrl} alt="" />
         <div>
-            <p className="username"> {user.username.toUpperCase()} </p>
+            <p className="username"> {user.username.toLowerCase()} </p>
             <p className="join-date"> {user.joinDate} </p>
-            {/* <ul className='list'>
+             {/* <ul className='list'>
               <li>  <span className='movie-counts'>{user.seenList.totalCount}</span> Seen Movies</li>
-              <li>  <span className='movie-counts'>{user.favoritesList.totalCount}</span> Favorites Movies</li>
-            </ul> */}
-            {/* <div>
+              <li>  <span className='movie-counts'>{user.favoriteList.totalCount}</span> Favorites Movies</li>
+            </ul>  */}
+            <div>
               <a href={user.socials.instagram}>
-                <InstagramIcon />
+                <FiInstagram />
               </a>
               <a href={user.socials.twitter}>
-                <TwitterIcon />
+                <FiTwitter />
               </a>
-            </div> */}
+            </div>
           </div>
         </div>
-  
+
   </ProfileGrid>
   );
 }

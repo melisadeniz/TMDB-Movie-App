@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import {Provider as ReduxProvider} from "react-redux"
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistor } from './reduxStore';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -13,15 +15,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const queryClient = new QueryClient();
 
 ReactDOM.render(
-  <BrowserRouter>
   <React.StrictMode>
-  <ReduxProvider store={store}>
-    <QueryClientProvider client={queryClient}>
-    <App />
-    </QueryClientProvider>
-    </ReduxProvider>
-  </React.StrictMode>
-  </BrowserRouter>,
+  <BrowserRouter>
+  <PersistGate loading={null} persistor={persistor}>  
+    <ReduxProvider store={store}>
+     <QueryClientProvider client={queryClient}>
+      <App />
+     </QueryClientProvider>
+     </ReduxProvider>
+    </PersistGate>
+  </BrowserRouter>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

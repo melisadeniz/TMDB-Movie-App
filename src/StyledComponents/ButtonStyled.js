@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  border-radius: 40px;
+  border-radius: 10px;
   border: none;
   box-shadow: px rgba(0, 0, 0, 0.15);
   cursor: pointer;

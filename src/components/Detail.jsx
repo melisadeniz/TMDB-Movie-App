@@ -24,9 +24,14 @@ function Detail() {
 
   const movieCreditsQuery = useQuery(["moviecredits", movieId], () => fetchSingleMovieCredits(movieId), { retry: false })
 
+  //Movie Info
   const singleData = singleMovieData?.data?.data;
 
+  //Movie Crew
+  const movieCrewData = movieCreditsQuery?.data?.data?.crew;
+  const crewList = ["director", "producer"]
 
+  //Movie Cast for Carousel
   const movieCastData = movieCreditsQuery?.data?.data?.cast;
 
   return (
@@ -89,6 +94,11 @@ function Detail() {
               <div className={`content-description mx-1 ${
                     state.theme ? "text-dark" : "text-light"
                   }`}><p>{singleData?.overview}</p></div>
+              <ul className="content-crew">
+          {
+            movieCrewData?.filter(item => crewList.includes(item.job.toLowerCase())).map(item => <li className="crew-text"> <b>{item.job}</b>: {item.name}</li>)
+          }
+             </ul>
 
               </div>
        

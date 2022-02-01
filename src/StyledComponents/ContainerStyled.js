@@ -18,7 +18,6 @@ export const ContainerStyled = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
   }
 
   .login_form {
@@ -27,7 +26,17 @@ export const ContainerStyled = styled.div`
     margin: 30px 0;
   }
 
+  
+
   @media (max-width: ${({ theme }) => theme.mobile}) {
 
 }
 `;
+
+export const BackgroundStyled = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0px;    
+`

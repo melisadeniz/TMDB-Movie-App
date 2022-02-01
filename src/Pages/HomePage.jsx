@@ -6,6 +6,7 @@ import { changeTrendValue } from "../reduxStore/trendValue";
 import Card from "../components/Card";
 import { Button } from "../styledComponents/ButtonStyled";
 import { ContainerStyled } from "../styledComponents/ContainerStyled";
+import {  CardContainer } from "../styledComponents/CardStyled"
 import { useQuery } from "react-query";
 import { fetchTrending, fetchDiscover } from "../data";
 
@@ -63,11 +64,11 @@ function HomePage() {
                 </Button>
               </div>
             </div>
-
+           <CardContainer>
             <div className="d-flex">
               <Card data={trendingData?.data} />
             </div>
-
+           </CardContainer>
             {/* {trendingData.data?.length === 0 && <NotFound />}      */}
 
             <br />
@@ -75,11 +76,12 @@ function HomePage() {
             <div className="d-flex">
               <h2>DISCOVER</h2>
             </div>
-
+            <CardContainer>
             <div className="d-flex">
               <Card data={discoverData?.data} />
             </div>
-            {/* {discoverData.data?.length === 0 && <NotFound />}      */}
+            </CardContainer>
+
           </div>
         </>
       )}

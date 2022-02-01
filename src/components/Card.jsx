@@ -1,22 +1,16 @@
 import { CardStyled, LinkStyled } from "../styledComponents/CardStyled";
-import { FiHeart, FiBookmark } from "react-icons/fi";
-import { useDispatch, useSelector } from 'react-redux';
 import { img_500, unavailable } from "../config";
-import { addFavList, addSeenList } from "../reduxStore/userValidation"
-// import { useDispatch } from "react-redux";
+// import { useSelector } from 'react-redux';
 
 function Card(props) {
 
-  const dispatch = useDispatch()
-  const { user } = useSelector((state) => state)
-  const favoriteList = user?.favoriteList?.favoriteFilms
-  const seenList = user?.seenList?.seenFilms
-
+// const state = useSelector((state) => state)
+ 
 
   return (
     <>
       {props.data?.map((item) => (
-        <CardStyled>
+        <CardStyled key={item.id}>
           <LinkStyled to={`/movie/${item.id}`}>
             <div key={item.id}>
               <img
@@ -38,14 +32,7 @@ function Card(props) {
                 <b className="title">{item.title}</b>
                 <span className="subtitle">
                   <div>
-                    {user.userLogin && (
-                      <div>
-                        <FiHeart isFav={favoriteList?.includes(item.id)}
-                        onClick={() => dispatch(addFavList(item.id))} />
-                        <FiBookmark isSeen={seenList?.includes(item.id)}
-                        onClick={() => dispatch(addSeenList(item.id))} />
-                      </div>
-                    )}
+                      
                   </div>
                   <span className="subtitle">{item.release_date}</span>
                 </span>

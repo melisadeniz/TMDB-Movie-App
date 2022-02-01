@@ -121,6 +121,16 @@ export const DetailModal = styled.div`
     .content-description {
       font-size: 22px;
     }
+    .content-crew {
+      list-style: none;
+      float: right;
+    }
+    .crew-text {
+      b {
+        font-weight: bold;
+      }
+      font-size: 13px;
+    }
   }
 
   .carousel {
@@ -130,7 +140,18 @@ export const DetailModal = styled.div`
     flex-direction: row;
     width: 750px;
     height: 300px;
-    border-radius: 20px;
+    border-radius: 10px;
+    &::-webkit-scrollbar {
+        height: 13px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: gray; 
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 3px black; 
+        border-radius: 10px;
+    }
   }
 
     .carouselItem {  

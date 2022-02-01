@@ -55,3 +55,25 @@ export const LinkStyled = styled(Link)`
     color: black;
   }
 `;
+
+export const CardContainer = styled.div`
+ margin: 20px 0px;
+    overflow: auto;
+    white-space:nowrap;
+    width: auto;
+    height: auto;
+    color: ${props => props.theme === "dark" ? "white" : "black"};
+    &::-webkit-scrollbar {
+        height: 13px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: white; 
+        border-radius: 2px;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 3px black; 
+        border-radius: 10px;
+    }
+
+`
+
