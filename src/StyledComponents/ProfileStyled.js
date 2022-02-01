@@ -2,13 +2,17 @@ import styled from "styled-components";
 import Table from "rc-table";
 
 export const ProfileGrid = styled.div`
-    grid-template-columns: 30% 70%;
-    text-align: center;
     align-items:center;
     display: flex;
     flex-direction: column;
-    margin: 10px 0;
+    margin: 40px 0px;
     
+    
+    .favseen-list {
+        list-style: none;
+        align-items: end;
+       
+    }
 
     img {
         border-radius: 10px;

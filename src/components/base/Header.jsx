@@ -75,7 +75,8 @@ function Header() {
                       className={`text-decoration-none mx-3 ${
                         state.theme ? "text-dark" : "text-light"
                       }`}
-                      to="/sort-filter/:popular"
+                      to="#"
+                      // to="/sort-filter/:popular" 
                     >
                       Popular
                     </Link>
@@ -85,7 +86,8 @@ function Header() {
                       className={`text-decoration-none mx-3 ${
                         state.theme ? "text-dark" : "text-light"
                       }`}
-                      to="/sort-filter/:top_rated"
+                      to="#"
+                      // to="/sort-filter/:top_rated"
                     >
                       Top Rated
                     </Link>

@@ -8,6 +8,8 @@ import { paginationReducer } from "./pagination";
 import { userReducer } from "./userValidation";
 import { loadMoreReducer } from "./LoadMore";
 import { genresReducer } from "./movieGenres";
+import { seenReducer } from "./SeenMovies";
+import { favoriteReducer } from "./FavMovies";
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -17,12 +19,14 @@ const rootReducer = combineReducers({
   pagination: paginationReducer,
   load: loadMoreReducer,
   genres: genresReducer,
+  seen: seenReducer,
+  favorite: favoriteReducer
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  //whitelist: ["counter"]
+
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
@@ -30,4 +34,5 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
 const store = createStore(persistedReducer);
 
 export const persistor = persistStore(store)
-export default store;
+
+export default store

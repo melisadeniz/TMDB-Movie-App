@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 export const CardStyled = styled.div`
   background-color: ${(props) =>
-    props.theme === "dark" ? "#131414" : "white"};
+  props.theme === "dark" ? "#131414" : "white"};
   display: flex;
   width: 190px;
-  height: 300px;
+  height: 310px;
   flex-wrap: wrap;
   justify-content: space-around;
   border-radius: 5px;
@@ -40,7 +40,7 @@ export const CardStyled = styled.div`
 
   img {
     width: 180px;
-    height: 240px;
+    height: 230px;
   }
 
   color: ${({ color }) => color || "#333"};

@@ -38,5 +38,5 @@ export const BackgroundStyled = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 100px 0px;    
+    margin: 110px 0px;    
 `
