@@ -48,7 +48,7 @@ function Header() {
         <div className="d-flex mx-4">
           <ul className="nav-menu list-unstyled d-flex my-2">
             <li>
-              <Logo src="./movielogoo.png" alt="..." />
+              <Logo src="./movielogo.png" alt="..." />
               <Link
                 className={`text-decoration-none mx-3 ${
                   state.theme ? "text-dark" : "text-light"

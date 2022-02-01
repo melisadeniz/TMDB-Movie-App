@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Header from "./components/base/Header";
+import Navbar from "./components/base/Navbar";
 import Footer from "./components/base/Footer";
 import routes from "./routes";
 
@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <div className="app">
-        <Header />
+        <Navbar />
         <br />
         <br />
         <br />
