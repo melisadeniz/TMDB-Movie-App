@@ -8,7 +8,7 @@ import { ContainerStyled } from "../styledComponents/ContainerStyled";
 import {  CardContainer } from "../styledComponents/CardStyled"
 import { useQuery } from "react-query";
 import { fetchTrending, fetchDiscover } from "../data";
-
+import NotFound from "../components/NotFound"
 function HomePage() {
   const { trend, search } = useSelector((state) => state);
 
@@ -68,7 +68,7 @@ function HomePage() {
               <Card data={trendingData?.data} />
             </div>
            </CardContainer>
-            {/* {trendingData.data?.length === 0 && <NotFound />}      */}
+            {trendingData.data?.length === 0 && <NotFound />}     
 
             <br />
 
@@ -80,6 +80,7 @@ function HomePage() {
               <Card data={discoverData?.data} />
             </div>
             </CardContainer>
+            {discoverData.data?.length === 0 && <NotFound />}     
 
           </div>
         </>
