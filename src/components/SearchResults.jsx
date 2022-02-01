@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchSearchMovies } from "../data";
 import { paginationHandler } from "../reduxStore/pagination";
 import Card from "./Card";
+import NotFound from "./NotFound";
 
 function SearchResults() {
   const { search, pagination: currentPage } = useSelector((state) => state);
@@ -28,12 +29,8 @@ function SearchResults() {
           data={searchData?.data?.slice(currentPage, currentPage + perPage)}
         />
         {searchData?.data?.length === 0 && (
-          <div
-            className="alert alert-danger fw-bold fs-3 col-6 mx-auto text-center py-5 mt-5"
-            role="alert"
-          >
-            404 - Not Found!
-          </div>
+
+          <NotFound />
         )}
         <div className="container row my-2">
         <ReactPaginate
