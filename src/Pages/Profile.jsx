@@ -13,19 +13,15 @@ function Profile(props) {
   <ProfileGrid>
      
         <div className="login my-5">
-        <img width={"200px"} src={user.avatarUrl} alt="" />
+        <img className="m-2 border" width={"180px"} src={user.avatarUrl} alt="" />
         <div>
-            <p className="username"> {user.username.toLowerCase()} </p>
+            <h3 className="username"> {user.username.toLowerCase()} </h3>
             <p className="join-date"> {user.joinDate} </p>
-             {/* <ul className='list'>
-              <li>  <span className='movie-counts'>{user.seenList.totalCount}</span> Seen Movies</li>
-              <li>  <span className='movie-counts'>{user.favoriteList.totalCount}</span> Favorites Movies</li>
-            </ul>  */}
             <div>
-              <a href={user.socials.instagram}>
+              <a className="mx-1 " href={user.socials.instagram}>
                 <FiInstagram />
               </a>
-              <a href={user.socials.twitter}>
+              <a className="mx-1" href={user.socials.twitter}>
                 <FiTwitter />
               </a>
             </div>
