@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const ContainerStyled = styled.div`
   background-color: ${({ theme }) => theme.dark};
   color: ${({ theme }) => theme.dark};
-
- 
+  margin: 0px 0px 40px;
 
   h2 {
-    font-family: fantasy;
+    font-family: fantasy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   h1 {
@@ -26,8 +25,6 @@ export const ContainerStyled = styled.div`
     flex-direction: column;
     margin: 30px 0;
   }
-
-  
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
 

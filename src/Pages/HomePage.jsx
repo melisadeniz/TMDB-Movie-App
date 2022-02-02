@@ -41,7 +41,7 @@ function HomePage() {
       ) : (
         <>
           <div className="container">
-            <div className="d-flex m-2">
+            <div className="title d-flex m-2">
               <h2>TRENDING</h2>
               <div className="btn-group ms-auto">
                 <Button
@@ -71,7 +71,7 @@ function HomePage() {
 
             <br />
 
-            <div className="d-flex">
+            <div className="title d-flex">
               <h2>DISCOVER</h2>
             </div>
             <CardContainer>
