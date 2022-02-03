@@ -2,8 +2,9 @@
 
 ### I used [MovieDB API](https://www.themoviedb.org/documentation/api). 🎬🍿
 
-#### username: melisadeniz
-#### password: password
+|username|password|
+|:-------:|:-------:|
+|melisadeniz|password|
 
 ## Technologies that I used
 - React
