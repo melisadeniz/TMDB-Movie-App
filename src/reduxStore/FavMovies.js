@@ -16,7 +16,7 @@ export const removeFavorite = (id) => ({
   payload: id,
 });
 
- export const favoriteReducer = (favorites = {
+const favoriteReducer = (favorites = {
   "favoriteFilms": [],
   "totalCount": 0
 }, action) => {
@@ -29,3 +29,5 @@ export const removeFavorite = (id) => ({
       return favorites;
   }
 };
+
+export {favoriteReducer}

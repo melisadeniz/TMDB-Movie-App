@@ -17,13 +17,15 @@ const queryClient = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
   <BrowserRouter>
+  <ReduxProvider store={store}>
   <PersistGate loading={null} persistor={persistor}>  
-    <ReduxProvider store={store}>
+    
      <QueryClientProvider client={queryClient}>
       <App />
      </QueryClientProvider>
-     </ReduxProvider>
+   
     </PersistGate>
+    </ReduxProvider>
   </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

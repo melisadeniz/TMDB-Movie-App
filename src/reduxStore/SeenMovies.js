@@ -16,7 +16,7 @@ export const removeSeen = (id) => ({
   payload: id,
 });
 
-export const seenReducer = (seen = {
+const seenReducer = (seen = {
   "seenFilms": [],
   "totalCount": 0
 }, action) => {
@@ -29,3 +29,5 @@ export const seenReducer = (seen = {
       return seen;
   }
 };
+
+export {seenReducer}

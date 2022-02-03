@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSearchMovies } from "../data";
 import { paginationHandler } from "../reduxStore/pagination";
+import { CardContainer } from "../styledComponents/CardStyled";
 import Card from "./Card";
 import NotFound from "./NotFound";
 
@@ -24,10 +25,12 @@ function SearchResults() {
 
   return (
     <>
-      <div className="container row d-flex my-2 offset-1">
-        <Card
-          data={searchData?.data?.slice(currentPage, currentPage + perPage)}
-        />
+     <CardContainer>
+      {searchData?.data?.slice(currentPage, currentPage + perPage).map((item) => (      
+        <Card item={item} />   
+        ))}
+     </CardContainer>
+              
         {searchData?.data?.length === 0 && <NotFound />}
         <div className="container row my-2">
           <ReactPaginate
@@ -56,8 +59,12 @@ function SearchResults() {
             initialPage={0}
           />
         </div>
-      </div>
+     
+    
+      
     </>
   );
 }
 export default SearchResults;
+
+

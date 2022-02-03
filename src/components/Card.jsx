@@ -1,25 +1,24 @@
 import { CardStyled, LinkStyled } from "../styledComponents/CardStyled";
 import { img_500, unavailable } from "../config";
 import { useDispatch, useSelector } from "react-redux";
-import { AiOutlineHeart } from "react-icons/ai";
-import { BsBookmark } from "react-icons/bs";
-import { FavoriteIcon, WatchedIcon } from "../styledComponents/IconStyled"
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
+
 import { addFavorite, removeFavorite } from "../reduxStore/FavMovies";
 import { addSeen, removeSeen } from "../reduxStore/SeenMovies";
 
-function Card(props) {
+function Card({item}) {
   const dispatch = useDispatch();
 
   const { seen, favorite } = useSelector((state) => state);
 
-  const isFav = favorite?.films?.some((fav) => fav.id);
+  const isFav = favorite?.films?.some((fav) => fav.id === item.id);
 
-  const isSeen = seen?.films?.some((seen) => seen.id);
+  const isSeen = seen?.films?.some((seen) => seen.id === item.id);
 
   return (
     <>
-      {props.data?.map((item) => (
-        <CardStyled key={item.id}>
+        <CardStyled>
           <LinkStyled to={`/movie/${item.id}`}>
             <div key={item.id}>
               <img
@@ -48,9 +47,9 @@ function Card(props) {
           </LinkStyled>
           <div>
             {isFav ? (
-              <FavoriteIcon
+              <AiFillHeart
                 onClick={() =>
-                  dispatch(removeFavorite(favorite.id === item.id))
+                  dispatch(removeFavorite(item.id))
                 }
               />
             ) : (
@@ -58,7 +57,7 @@ function Card(props) {
                 onClick={() =>
                   dispatch(
                     addFavorite(
-                      favorite.id === item.id,
+                      item.id,
                       item.title,
                       item.poster_path,
                       item.release_date
@@ -67,16 +66,17 @@ function Card(props) {
                 }
               />
             )}
+
             {isSeen ? (
-              <WatchedIcon
-                onClick={() => dispatch(removeSeen(seen.id === item.id))}
+              <BsFillBookmarkFill
+                onClick={() => dispatch(removeSeen(item.id))}
               />
             ) : (
               <BsBookmark
                 onClick={() =>
                   dispatch(
                     addSeen(
-                      seen.id === item.id,
+                      item.id,
                       item.title,
                       item.poster_path,
                       item.release_date
@@ -87,7 +87,6 @@ function Card(props) {
             )}
           </div>
         </CardStyled>
-      ))}
     </>
   );
 }

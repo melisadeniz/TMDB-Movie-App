@@ -1,15 +1,19 @@
-const GET_GENRES = "GET_GENRES"
+const GENRES = "GENRES";
 
-export const getGenres = (genres) => ({
-    type: GET_GENRES,
-    payload: genres
-})
+export const getGenres = (genres) => {
+    return {
+        type: GENRES,
+        payload: genres,
+    }
 
-export const genresReducer = (genresList = [], action) => {
-    switch(action.type) {
-        case GET_GENRES:
+};
+
+export const genreReducer = (genresList = [], action) => {
+    switch (action.type) {
+        case GENRES:
             return action.payload
         default:
-            return genresList
-    }
-}
+            return genresList;
+    };
+};
+

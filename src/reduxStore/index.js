@@ -6,8 +6,7 @@ import trendReducer from "./trendValue";
 import { searchReducer } from "./searchValue";
 import { paginationReducer } from "./pagination";
 import { userReducer } from "./userValidation";
-import { loadMoreReducer } from "./LoadMore";
-import { genresReducer } from "./movieGenres";
+import { genreReducer } from "./movieGenres";
 import { seenReducer } from "./SeenMovies";
 import { favoriteReducer } from "./FavMovies";
 
@@ -17,8 +16,7 @@ const rootReducer = combineReducers({
   theme: themeReducer,
   search: searchReducer,
   pagination: paginationReducer,
-  load: loadMoreReducer,
-  genres: genresReducer,
+  genres: genreReducer,
   seen: seenReducer,
   favorite: favoriteReducer
 });

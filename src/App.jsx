@@ -7,11 +7,14 @@ import OpeningPage from "./pages/OpeningPage";
 import routes from "./routes";
 
 function App() {
+  
   const state = useSelector((state) => state);
   
-  const [isLoading, setLoadig] = useState(true);
+  const [isLoading, setLoading] = useState(true);
+
+
   setTimeout(() => {
-    setLoadig(false);
+    setLoading(false);
   }, 4000);
 
   document.getElementById("root").style.backgroundColor = state.theme
@@ -20,8 +23,6 @@ function App() {
   document.getElementById("root").style.color = state.theme ? "black" : "white";
 
  
-
-
   return (
       
     <> 

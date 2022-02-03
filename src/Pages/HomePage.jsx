@@ -63,9 +63,10 @@ function HomePage() {
               </div>
             </div>
             <CardContainer>
-              <div className="d-flex">
-                <Card data={trendingData?.data} />
-              </div>
+            {trendingData?.data?.map((item) => (  
+                
+                <Card item={item} />
+            ))}
             </CardContainer>
             {trendingData.data?.length === 0 && <NotFound />}
 
@@ -75,9 +76,9 @@ function HomePage() {
               <h2>DISCOVER</h2>
             </div>
             <CardContainer>
-              <div className="d-flex">
-                <Card data={discoverData?.data} />
-              </div>
+            {discoverData?.data?.map((item) => (          
+                <Card item={item} />
+            ))}
             </CardContainer>
             {discoverData.data?.length === 0 && <NotFound />}
           </div>

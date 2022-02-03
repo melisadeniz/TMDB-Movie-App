@@ -57,7 +57,8 @@ export const LinkStyled = styled(Link)`
 `;
 
 export const CardContainer = styled.div`
- margin: 20px 0px;
+ margin: 20px 50px;
+ display: flex;
     overflow: auto;
     white-space:nowrap;
     width: auto;

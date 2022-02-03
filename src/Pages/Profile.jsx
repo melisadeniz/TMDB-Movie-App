@@ -5,6 +5,7 @@ import { FiInstagram, FiTwitter } from "react-icons/fi";
 function Profile(props) {
   const { user, favorite, seen } = useSelector((state) => state);
 
+
   return (
     <ProfileGrid>
       <div className="row">
@@ -35,6 +36,20 @@ function Profile(props) {
             </li>
           </ul>
         </div>
+        <div className="row">
+                    <select
+                        className="form-select my-3"
+                        aria-label="Default select example"
+                        // onChange={(e) =>
+                        //     setSort(e.target.options[e.target.selectedIndex].value)
+                        // }
+                    >
+                        <option value="all">all</option>
+                        <option value="date">closest release date</option>
+                        <option value="fav">favorites</option>
+                        <option value="seen">seen</option>
+                    </select>
+                </div>
       </div>
     </ProfileGrid>
   );

@@ -1,24 +1,15 @@
-const LOAD_MORE = "LOAD_MORE_MOVIES"
-const RESET_LOAD = "RESET_LOAD"
+const LOAD_MORE_DATA = "LOAD_MORE_DATA"
 
-export const loadMoreMovies = () => ({
-    type: LOAD_MORE,
-    
+export const loadMoreData = (data) => ({
+    type: LOAD_MORE_DATA,
+    payload: data,
 })
 
-export const resetLoad = () => ({
-    type: RESET_LOAD
-})
-
-const loadMoreReducer = (pages = [1], action) => {
+export const loadMoreReducer = (moreData =[], action) => {
     switch(action.type) {
-        case LOAD_MORE:
-            return [...pages, pages[pages.length-1]+1]
-        case RESET_LOAD:
-            return [1]
+        case LOAD_MORE_DATA:
+            return [action.payload,...moreData ]
         default:
-            return pages
+            return moreData
     }
 }
-
-export {loadMoreReducer}
