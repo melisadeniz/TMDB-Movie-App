@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Logo = styled.img`
   width: 50px;
   height: 50px;
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (max-width: 768px) {
     margin: 10px 0 5px;
   }
 `;
@@ -12,7 +12,7 @@ export const  ProfileImage = styled.img`
    border-radius: 100%;
     width: ${props => props.width};
     box-shadow: 0 0 5px rgb(34, 40, 49, 0.5);
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (max-width: 768px) {
     margin: 10px 0 5px;
   }
 `;
@@ -167,7 +167,7 @@ export const HeaderStyled = styled.nav`
     }
   }
 
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (max-width: 768px) {
   .nav {position: relative;}
   Link {
     float: none;

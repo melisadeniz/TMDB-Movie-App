@@ -1,20 +1,32 @@
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import Navbar from "./components/base/Navbar";
 import Footer from "./components/base/Footer";
+import OpeningPage from "./pages/OpeningPage";
 import routes from "./routes";
 
 function App() {
   const state = useSelector((state) => state);
   
+  const [isLoading, setLoadig] = useState(true);
+  setTimeout(() => {
+    setLoadig(false);
+  }, 4000);
 
   document.getElementById("root").style.backgroundColor = state.theme
     ? "#BBBBBB"
     : "#2C394B";
   document.getElementById("root").style.color = state.theme ? "black" : "white";
 
+ 
+
+
   return (
-    <>
+      
+    <> 
+    {isLoading && <OpeningPage></OpeningPage>}
+       {!isLoading && (
       <div className="app">
         <Navbar />
         <br />
@@ -25,8 +37,9 @@ function App() {
             <Route key={index} path={item.path} element={<item.element />} />
           ))}
         </Routes>
-      </div>
-      <Footer />
+        <Footer />
+      </div>    
+      )}
     </>
   );
 }

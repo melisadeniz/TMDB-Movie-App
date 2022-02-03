@@ -23,7 +23,7 @@ export const FooterStyled = styled.footer`
     font-size: small;
   }
   
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (max-width: 768px) {
     text-align: center;
     ul {
       padding: 0;

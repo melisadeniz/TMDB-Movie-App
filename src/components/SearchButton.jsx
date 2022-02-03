@@ -1,10 +1,22 @@
 import { DebounceInput } from "react-debounce-input";
 import { Button } from "../styledComponents/ButtonStyled";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
 import { searchValue } from "../reduxStore/searchValue";
 
-function SearchButton({ handleReset }) {
+function SearchButton() {
+  const { search } = useSelector((state) => state);
   const dispatch = useDispatch();
+
+
+  const handleReset = () => {
+    onChange('')
+  }
+
+
+  const onChange = (e) => {
+    dispatch(searchValue(e.target.value));
+  };
 
   return (
     <>
@@ -16,13 +28,15 @@ function SearchButton({ handleReset }) {
             id="search"
             className="form-control"
             debounceTimeout={300}
-            onChange={(e) => dispatch(searchValue(e.target.value))}
+            value={search}
+            onChange={(e) => {e.persist(); //??
+              onChange(e)}}
             placeholder="Search Movie"
           />
         </div>
         <div className="col-6">
           <Button
-            type="button"
+            type="reset"
             onClick={handleReset}
             className="btn-outline-secondary"
           >
