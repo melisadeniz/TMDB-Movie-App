@@ -4,7 +4,7 @@
 
 ### I used [MovieDB API](https://www.themoviedb.org/documentation/api). 
 
-### Here is the [LINK](https://dr-bookstore-website-clone.netlify.app).
+### Here is the [LINK](https://upschool-fd-capstone-project.netlify.app).
 
 |username|password|
 |:-------:|:-------:|
