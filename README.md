@@ -1,6 +1,6 @@
 # Movie App
 
-<img src="https://gfycat.com/horriblejitterybellfrog" align="right" width="500" height="380">
+<img src="https://i.gifer.com/fy3z.gif" align="right" width="500" height="380">
 
 ### I used [MovieDB API](https://www.themoviedb.org/documentation/api). 🎬🍿
 
