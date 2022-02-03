@@ -1,6 +1,6 @@
 # Movie App
 
-<img src="https://c.tenor.com/h_y-EtyUmN4AAAAd/popcorn-this-should-be-good.gif" align="right" width="500" height="380">
+<img src="https://user-images.githubusercontent.com/92738893/152362328-644a07e6-6498-4deb-be9f-b6fbfc7f6b32.gif" align="right" width="500" height="380">
 
 ### I used [MovieDB API](https://www.themoviedb.org/documentation/api). 🎬🍿
 
