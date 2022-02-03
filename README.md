@@ -10,7 +10,6 @@
 - React
 - React Router Dom
 - JavaScript
-- Bootstrap
 - Axios
 - Bootstrap 5
 - React Icons
