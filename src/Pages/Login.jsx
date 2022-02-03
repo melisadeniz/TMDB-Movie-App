@@ -25,7 +25,7 @@ function Login(props) {
   return (
     <ContainerStyled>
       <div className="login my-5">
-        <form className="login_form">
+        <form className="login_form p-5">
           <input
             type="username"
             placeholder="Username"
