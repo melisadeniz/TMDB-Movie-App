@@ -1,15 +1,17 @@
-const LOAD_MORE_DATA = "LOAD_MORE_DATA"
+const LOAD_MORE = "LOAD_MORE";
 
-export const loadMoreData = (data) => ({
-    type: LOAD_MORE_DATA,
-    payload: data,
+export const loadMoreMovies = (data) => ({
+  type: LOAD_MORE,
+  payload: data,
 })
 
-export const loadMoreReducer = (moreData =[], action) => {
-    switch(action.type) {
-        case LOAD_MORE_DATA:
-            return [action.payload,...moreData ]
-        default:
-            return moreData
-    }
+const loadMoreReducer = (loadMoreData = [], action) => {
+  switch(action.type) {
+    case LOAD_MORE:
+      return [...loadMoreData, action.payload]
+    default:
+      return loadMoreData
+  }
 }
+
+export default loadMoreReducer;

@@ -7,6 +7,8 @@ import { DetailModal } from "../styledComponents/DetailStyled";
 import { img_500, unavailable, unavailableLandscape } from "../config";
 import { ContainerStyled } from "../styledComponents/ContainerStyled";
 import { img_300, noPicture } from "../config";
+import Reviews from '../components/Reviews'
+import Recommendation from '../components/Recommendation'
 
 function Detail() {
   const state = useSelector((state) => state);
@@ -145,6 +147,17 @@ function Detail() {
                   </div>
                 ))}
               </div>
+              <br />
+               <div className="container ">
+        <h3>Reviews</h3>
+        <Reviews movieId={movieId} className='border-none' />
+      </div>
+              <div className="container">
+        <h3>Recommendation Movies</h3>
+        <div className="row">
+          <Recommendation movieId={movieId} />
+        </div>
+      </div>
             </div>
           </div>
         </div>

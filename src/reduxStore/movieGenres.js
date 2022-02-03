@@ -8,7 +8,7 @@ export const getGenres = (genres) => {
 
 };
 
-export const genreReducer = (genresList = [], action) => {
+const genreReducer = (genresList = [], action) => {
     switch (action.type) {
         case GENRES:
             return action.payload
@@ -17,3 +17,4 @@ export const genreReducer = (genresList = [], action) => {
     };
 };
 
+export default genreReducer

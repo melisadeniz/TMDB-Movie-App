@@ -76,7 +76,7 @@ function Header() {
                         state.theme ? "text-dark" : "text-light"
                       }`}
                       // to="sort-filter/popular"
-                      to="#"
+                      to="/popular"
                       
                     >
                       Popular
@@ -88,7 +88,7 @@ function Header() {
                         state.theme ? "text-dark" : "text-light"
                       }`}
                       // to="sort-filter/top_rated"   
-                      to="#"                  
+                      to="/top-rated"                  
                     >
                       Top Rated
                     </Link>

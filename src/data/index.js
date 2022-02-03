@@ -25,5 +25,13 @@ export const fetchTrending = (trendValue) => BASE_AXIOS.get(`/trending/movie/${t
 //Genres
 export const fetchGenres = () => BASE_AXIOS.get(`/genre/movie/list?api_key=${API_KEY}`);
 
+export const fetchPopularMovies = () => BASE_AXIOS.get(`/movie/popular?api_key=${API_KEY}`);
+
+export const fetchTopRatedMovies = () => BASE_AXIOS.get(`/movie/top_rated?api_key=${API_KEY}`);
+
+export const fetchRecommendationMovies = (movieId) => BASE_AXIOS.get(`/movie/${movieId}/recommendations?api_key=${API_KEY}`)
+
+export const fetchReviews = (movieId) => BASE_AXIOS.get(`/movie/${movieId}/reviews?api_key=${API_KEY}`)
+
 
 

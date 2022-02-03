@@ -14,7 +14,7 @@ export const userLogout = () => ({
 })
 
 //REDUCER
-export const userReducer = (user, action) => {
+const userReducer = (user, action) => {
   init_user.forEach((value) => {
     user = value;
   });
@@ -33,3 +33,4 @@ export const userReducer = (user, action) => {
   }
 };
 
+export default userReducer

@@ -40,6 +40,21 @@ function HomePage() {
         <SearchResults />
       ) : (
         <>
+          <br />
+          <div className="container">
+            <div className="title d-flex">
+              <h2>DISCOVER</h2>
+            </div>
+            <CardContainer>
+              {discoverData?.data?.map((item) => (
+                <Card item={item} />
+              ))}
+            </CardContainer>
+            {discoverData.data?.length === 0 && <NotFound />}
+          </div>
+
+          <br />
+
           <div className="container">
             <div className="title d-flex m-2">
               <h2>TRENDING</h2>
@@ -63,24 +78,11 @@ function HomePage() {
               </div>
             </div>
             <CardContainer>
-            {trendingData?.data?.map((item) => (  
-                
+              {trendingData?.data?.map((item) => (
                 <Card item={item} />
-            ))}
+              ))}
             </CardContainer>
             {trendingData.data?.length === 0 && <NotFound />}
-
-            <br />
-
-            <div className="title d-flex">
-              <h2>DISCOVER</h2>
-            </div>
-            <CardContainer>
-            {discoverData?.data?.map((item) => (          
-                <Card item={item} />
-            ))}
-            </CardContainer>
-            {discoverData.data?.length === 0 && <NotFound />}
           </div>
         </>
       )}

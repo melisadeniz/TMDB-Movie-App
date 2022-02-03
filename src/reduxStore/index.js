@@ -3,12 +3,13 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import themeReducer from "./themeSwitch";
 import trendReducer from "./trendValue";
-import { searchReducer } from "./searchValue";
-import { paginationReducer } from "./pagination";
-import { userReducer } from "./userValidation";
-import { genreReducer } from "./movieGenres";
-import { seenReducer } from "./SeenMovies";
-import { favoriteReducer } from "./FavMovies";
+import searchReducer from "./searchValue";
+import paginationReducer from "./pagination";
+import userReducer  from "./userValidation";
+import genreReducer  from "./movieGenres";
+import seenReducer  from "./SeenMovies";
+import favoriteReducer from "./FavMovies";
+import filterReducer from "./SortFilter";
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   pagination: paginationReducer,
   genres: genreReducer,
   seen: seenReducer,
-  favorite: favoriteReducer
+  favorite: favoriteReducer,
+  filteredData: filterReducer,
 });
 
 const persistConfig = {

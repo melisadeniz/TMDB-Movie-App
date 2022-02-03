@@ -14,4 +14,4 @@ const paginationReducer = (currPage = 1, action) => {
   }
 };
 
-export { paginationReducer };
+export default paginationReducer ;

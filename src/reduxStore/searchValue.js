@@ -16,4 +16,4 @@ const searchReducer = (value = "", action) => {
   }
 };
 
-export { searchReducer };
+export default searchReducer ;

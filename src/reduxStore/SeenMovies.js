@@ -30,4 +30,4 @@ const seenReducer = (seen = {
   }
 };
 
-export {seenReducer}
+export default seenReducer

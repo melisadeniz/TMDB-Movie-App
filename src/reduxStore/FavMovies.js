@@ -30,4 +30,4 @@ const favoriteReducer = (favorites = {
   }
 };
 
-export {favoriteReducer}
+export default favoriteReducer
