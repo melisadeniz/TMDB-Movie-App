@@ -1,33 +1,34 @@
-import { useQuery } from 'react-query'
+import { useQuery } from "react-query";
 import { fetchReviews } from "../data";
 import { useSelector } from "react-redux";
 
-function Reviews({movieId}){
-
-  
+function Reviews({ movieId }) {
   const state = useSelector((state) => state);
-  const { data } =
-    useQuery(['reviews', movieId], () => fetchReviews(movieId),
-      {
-        retry: false,
-        select: (data) => data.data.results
+  const { data } = useQuery(["reviews", movieId], () => fetchReviews(movieId), {
+    retry: false,
+    select: (data) => data.data.results,
+  });
 
-      })
-  
-  return(
+  return (
     <>
-      {
-        data?.map((item,index) => (
-          <div className={`card border-0 mb-5 ${
-            state.theme ? "bg-light" : "bg-dark"
-          }`}>
-            <div className={`card-body ${state.theme ? "text-dark" : "text-light"}`}>
+      {data
+        ?.map((item, index) => (
+          <div
+            className={`card border-0 mb-5 ${
+              state.theme ? "bg-light" : "bg-dark"
+            }`}
+          >
+            <div
+              className={`card-body ${
+                state.theme ? "text-dark" : "text-light"
+              }`}
+            >
               <h5 className="card-title">{item.author}</h5>
-              <p className="card-text">{item.content.substring(0,300)}...</p>
+              <p className="card-text">{item.content.substring(0, 300)}...</p>
             </div>
           </div>
-        )).slice(0,1)
-      }
+        ))
+        .slice(0, 1)}
     </>
   );
 }

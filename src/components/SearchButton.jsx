@@ -8,11 +8,9 @@ function SearchButton() {
   const { search } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-
   const handleReset = () => {
-    onChange('')
-  }
-
+    onChange("");
+  };
 
   const onChange = (e) => {
     dispatch(searchValue(e.target.value));
@@ -29,8 +27,10 @@ function SearchButton() {
             className="form-control"
             debounceTimeout={300}
             value={search}
-            onChange={(e) => {e.persist(); //??
-              onChange(e)}}
+            onChange={(e) => {
+              e.persist(); //??
+              onChange(e);
+            }}
             placeholder="Search Movie"
           />
         </div>
