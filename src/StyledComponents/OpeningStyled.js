@@ -14,8 +14,8 @@ export const Opening = styled.div`
 }
 
   img {
-  width: 760px;
-  height: 600px;
+  width: 740px;
+  height: 580px;
   right: 0px;
   left: 0px;
   display: table;
