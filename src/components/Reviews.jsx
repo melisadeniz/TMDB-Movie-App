@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { fetchReviews } from "../data";
 import { useSelector } from "react-redux";
+// import { DetailModal } from "../styledComponents/DetailStyled"
 
 function Reviews({ movieId }) {
   const state = useSelector((state) => state);
@@ -11,6 +12,7 @@ function Reviews({ movieId }) {
 
   return (
     <>
+   
       {data
         ?.map((item, index) => (
           <div
@@ -23,12 +25,13 @@ function Reviews({ movieId }) {
                 state.theme ? "text-dark" : "text-light"
               }`}
             >
-              <h5 className="card-title">{item.author}</h5>
+              <h5 className="card-title row">{item.author}</h5>
               <p className="card-text">{item.content.substring(0, 300)}...</p>
             </div>
           </div>
         ))
         .slice(0, 1)}
+      
     </>
   );
 }

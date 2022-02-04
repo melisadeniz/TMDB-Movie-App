@@ -7,7 +7,7 @@ export const DetailModal = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 100px 0px
+    margin: 200px 0px
   }
 
 
@@ -28,8 +28,8 @@ export const DetailModal = styled.div`
     display: flex;
     flex-direction: column;
     overflow: scroll;
-    width: 760px;
-    height: 460px;
+    width: 880px;
+    height: 560px;
     border-radius: 20px;
     padding: 20px 20px;
   }
@@ -41,7 +41,7 @@ export const DetailModal = styled.div`
   .content-landscape {
     object-fit: contain;
     border-radius: 10px;
-    margin: 5px 120px;
+    margin: 5px 170px;
   }
 
   .content-portrait {
@@ -53,6 +53,7 @@ export const DetailModal = styled.div`
   .tagline {
     padding-bottom: 0px;
     align-self: center;
+    font-size: 18px;
   }
 
   .content-about {
@@ -74,13 +75,12 @@ export const DetailModal = styled.div`
     border-radius: 20px;
     scrollbar-width: thin; 
     box-shadow: inset 0 0 5px #000000;
+        
+    p {
+      font-size: 16px ;
+    }
 
-    p { 
-     font-size: small;
   }
-
-  }
-    
     
   
   .content-description::-webkit-scrollbar {
@@ -138,7 +138,7 @@ export const DetailModal = styled.div`
     overflow-x: scroll;
     padding: 10px;
     flex-direction: row;
-    width: 750px;
+    width: 850px;
     height: 300px;
     border-radius: 10px;
     &::-webkit-scrollbar {

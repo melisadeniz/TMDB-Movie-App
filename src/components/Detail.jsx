@@ -148,7 +148,7 @@ function Detail() {
                 ))}
               </div>
               <br />
-              <div className="container ">
+              <div className="container">
                 <h3>Reviews</h3>
                 <Reviews movieId={movieId} className="border-none" />
               </div>

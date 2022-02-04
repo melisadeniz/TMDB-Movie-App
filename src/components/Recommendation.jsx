@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { fetchRecommendationMovies } from "../data";
 import { img_500 } from "../config";
+// import { DetailModal } from "../styledComponents/DetailStyled"
 // import { useSelector } from "react-redux";
 
 function Recommendation({ movieId }) {
@@ -16,6 +17,7 @@ function Recommendation({ movieId }) {
 
   return (
     <>
+   
       {data
         ?.map((item) => (
           <div key={item.id} className="col-sm-3 mt-5">
@@ -37,6 +39,7 @@ function Recommendation({ movieId }) {
           </div>
         ))
         .slice(0, 3)}
+     
     </>
   );
 }
