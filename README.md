@@ -13,8 +13,10 @@
 ## Technologies that I used
 - React
 - React Router Dom
+- React Query
+- Redux
 - JavaScript
 - Axios
 - Bootstrap 5
 - React Icons
-- Redux
+
