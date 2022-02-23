@@ -15,8 +15,7 @@
 - React Router Dom
 - React Query
 - Redux
-- JavaScript
 - Axios
-- Bootstrap 5
+- Bootstrap
 - React Icons
 
